@@ -42,7 +42,7 @@
 
                                     if(!empty($code)) {
 
-                                        $verify = "SELECT * FROM `verify` WHERE `veri_code`='".mysqli_real_escape_string($con, $code)."'";
+                                        $verify = "SELECT * FROM `verify` WHERE `veri_code`='$code'";
                                         if($verify_query = mysqli_query($con, $verify)) {
 
                                             $num_rows = mysqli_num_rows($verify_query);
@@ -52,6 +52,8 @@
                                                 $db_stats = $row['status'];
 
                                                 if($db_stats == 'new') {
+
+                                                    
 
                                                 } elseif($db_stats == 'in-use') {
 

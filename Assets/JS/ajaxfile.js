@@ -387,3 +387,33 @@ function showProduct(productmax) {
     xmlhttp.send(parameters);
     
 }
+
+function register() {
+    if (window.XMLHttpRequest) {
+	
+        xmlhttp = new XMLHttpRequest();
+ 
+     } else {
+     
+         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+     }
+ 
+     xmlhttp.onreadystatechange = function() {
+ 
+         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+             
+             document.getElementById('register').innerHTML = xmlhttp.responseText;
+             
+         }
+     }
+     
+     parameters = 'reg_username='+document.getElementById("username").value
+     +'&reg_password='+document.getElementById("password").value
+     +'&reg_code='+document.getElementById("verificationCode").value
+     +'&reg_fname='+document.getElementById("firstName").value
+     +'&reg_lname='+document.getElementById("lastName").value;
+ 
+     xmlhttp.open('POST', 'ajaxfile.php', true);
+     xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+     xmlhttp.send(parameters);
+}

@@ -48,7 +48,7 @@ require_once "Assets/Include/connect.inc.php";
                     if(password_verify($password, $password_hash)) {
 
                         $_SESSION['user_id'] = $user_id;
-                        header("Location: admin.php");
+                        header("Location: lobby.php");
 
                     } else {
 

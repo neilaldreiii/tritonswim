@@ -31,9 +31,11 @@
                         
                         $row = mysqli_fetch_array($verify_query);
                         $code_id = $row['id'];
+                        $db_code = $row['veri_code'];
                         $db_stats = $row['status'];
 
                         if($db_stats == 'new') {
+
                         ?>
 
                         <div class="container">
@@ -44,19 +46,22 @@
                                 <div class="form-header">
                                     <h2>Sign Up</h2>
                                 </div>
-                                <form action="lobby.php" method="POST">
+                                <form action="<?php echo $current_file; ?>" onSubmit="register(); return false;">
                                     <div class="form-container">
                                         <div class="input-field">
-                                            <input type="text" name="username" placeholder="Username">
+                                            <input type="text" name="verificationCode" id="verificationCode" value="<?php echo $db_code; ?>" disabled>
                                         </div>
                                         <div class="input-field">
-                                            <input type="password" name="password" placeholder="Password">
+                                            <input type="text" name="username" placeholder="Username" id="username">
                                         </div>
                                         <div class="input-field">
-                                            <input type="text" name="fname" placeholder="First Name">
+                                            <input type="password" name="password" placeholder="Password" id="password">
                                         </div>
                                         <div class="input-field">
-                                            <input type="text" name="lname" placeholder="Last Name">
+                                            <input type="text" name="fname" placeholder="First Name" id="firstName">
+                                        </div>
+                                        <div class="input-field">
+                                            <input type="text" name="lname" placeholder="Last Name" id="lastName">
                                         </div>
                                         <div class="form-action">
                                             <a href="triton.php">Sign in Instead</a>
@@ -64,50 +69,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <?php
-                                if(isset($_POST['username'])
-                                && isset($_POST['password'])
-                                && isset($_POST['fname'])
-                                && isset($_POST['lname'])) {
-
-                                    echo $username = $_POST['username'];
-                                    echo $password = $_POST['password'];
-                                    echo $fname = $_POST['fname'];
-                                    echo $lname = $_POST['lname'];
-
-                                    if(!empty($username) 
-                                    && !empty($password)
-                                    && !empty($fname)
-                                    && !empty($lname)) {
-
-                                        $update = "UPDATE `verify` SET `status` = 'in-use' WHERE `verify`.`id`='$code_id'";
-                                        if($up_query = mysqli_query($con, $update)) {
-
-                                            $add = "INSERT INTO `admin` VALUES('','".mysqli_real_escape_string($con, $username)."', '".mysqli_real_escape_string($con, $password)."','".mysqli_real_escape_string($con, $fname)."', '".mysqli_real_escape_string($con, $lname)."')";
-                                            if($add_query = mysqli_query($con, $add)) {
-
-                                                header("Location: lobby.php");
-
-                                            } else {
-
-                                                header("Location: events.php");
-                                                echo '<p class="error">Failed adding member</p>';
-
-                                            }
-                                        } else {
-
-                                            header("Location: gallery.php");
-                                            echo '<p class="error">Verification code failed</p>';
-
-                                        }
-                                    } else {
-
-                                        header("Location: athletes.php");
-                                        echo '<p class="error">All fields are required.</p>';
-
-                                    }
-                                }
-                                ?>
+                                <div id="register"></div>
                             </div>
                         </div>
                         <?php
@@ -118,7 +80,9 @@
                         }
 
                     } elseif($num_rows == 0) {
+
                         echo '<p class="error">The code you entered does not exist. </p>';
+                        
                     }
                 }
             }
@@ -126,5 +90,6 @@
             echo '<h1 style="margin: auto; padding: 20px; text-align: center;">Error: 404 (Nothing to do here.)</h1>';
         }
     ?>
+    <script src="Assets/JS/ajaxfile.js"></script>
 </body>
 </html>
