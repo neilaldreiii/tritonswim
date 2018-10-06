@@ -70,12 +70,12 @@
                                 && isset($_POST['fname'])
                                 && isset($_POST['lname'])) {
 
-                                    echo $username = $_POST['usernane'];
+                                    echo $username = $_POST['username'];
                                     echo $password = $_POST['password'];
                                     echo $fname = $_POST['fname'];
                                     echo $lname = $_POST['lname'];
 
-                                    if(!empty($usernmae) 
+                                    if(!empty($username) 
                                     && !empty($password)
                                     && !empty($fname)
                                     && !empty($lname)) {
