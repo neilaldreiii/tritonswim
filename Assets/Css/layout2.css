@@ -1,0 +1,258 @@
+.login {
+    width: 375px;
+    margin: auto;
+    background: #FFF;
+    box-shadow: 0 0 7px #ccc;
+    border-radius: 3px;
+    padding: 12px;
+}
+.login input {
+    width: 100%;
+}
+.admin-container {
+    margin: 150px auto;
+    width: 80%;
+    display: flex;
+    flex-flow: row;
+    font-family: 'Raleway', sans-serif;
+}
+.admin-container .sub-container {
+    width: 50%;
+}
+.admin-container .sub-container>div {
+    background: #fff;
+    margin: 10px;
+    box-shadow: 0 0 8px #ccc;
+    padding: 10px;
+}
+.sub-container .binder {
+    display: flex;
+    flex-flow: row;
+}
+.sub-container .binder>div {
+    flex-grow: 1;
+}
+.sub-container .sub-header {
+    border-bottom: 1px solid #ddd;
+}
+.preview img {
+    height: 200px;
+    width: 220px;
+    margin: auto;
+    display: block;
+}
+.athlete, .bm {
+    display: flex;
+    flex-flow: row;
+    padding: 10px;
+}
+.athlete>div, .bm>div {
+    flex-grow: 1;
+}
+.athlete-profile-display, .bm-profile-display {
+    display: flex;
+    flex-flow: row;
+}
+.athlete-profile-display img, .bm-profile-display img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.athlete-profile-display p, .bm-profile-display p {
+    margin: auto 7px;
+}
+.athlete-category, .athlete-controls, .bm-controls {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center; 
+}
+.ad {
+    display: flex;
+    flex-flow: column;
+}
+.ad .ad-display {
+    height: 225px;
+    width: 100%;
+}
+.ad .ad-display img {
+    height: 100%;
+    width: 100%;
+}
+.slide {
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    margin: 15px 0;
+}
+.slide .slide-display {
+    height: 225px;
+    width: 100%;
+}
+.slide-display img {
+    height: 100%;
+    width: 100%;
+}
+.slide-controls {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 10px;
+}
+.slide-controls p {
+    color: #FFF;
+    text-shadow: 0 0 7px #000;
+}
+label {
+    background: #FFF;
+    color: #555;
+    font-weight: 600;
+    padding: 7px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 8px #ccc;
+    border-radius: 3px;
+    margin: 5px 0;
+    font-size: 10pt;
+}
+label:hover {
+    cursor: pointer;
+    color: #000;
+}
+input[type=file] {
+    display: none;
+}
+.remove {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    font-weight: 600;
+    padding: 5px;
+}
+.remove:hover {
+    cursor: pointer;
+    color: #FF0000;
+}
+.gallery-item-grid, .products-item-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: minmax(auto, 250px);
+    grid-gap: 15px;
+}
+.gallery-item, .product-item {
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 12px #ccc;
+}
+.gallery-item img, .product-item img {
+    height: 100%;
+    width: 100%;
+}
+.gallery-item:hover .overlay, .product-item:hover .overlay {
+    opacity: 1;
+}
+.gallery-item .overlay, .product-item .overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,0.6);
+    display: flex;
+    flex-flow: column;
+    transition: all 0.5s;
+}
+.gallery-item .overlay button, .product-item .overlay button {
+    display: block;
+    margin: auto 5px;
+    margin-bottom: 5px;
+}
+.product-item .overlay p {
+    font-weight: 600;
+    text-align: center;
+    font-size: 18pt;
+}
+.all-events, .all-athlete, .all-gallery-img, .all-registrations {
+    max-height: 725px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.add-events .binder .preview {
+    width: 50%;
+}
+.add-events .binder .preview span {
+    font-size: 10pt;
+}
+.events-form {
+    flex-grow: 1;
+    width: 75%;
+    padding: 5px;
+}
+.events-form textarea, .athlete-form textarea, .slide-caption textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+    resize: none;
+    height: 125px;
+    max-height: 175px;
+    font-family: sans-serif;
+}
+.event {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+.event .sub-header {
+    border: none;
+}
+.applicant {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+}
+.applicant>div {
+    display: flex;
+    flex-flow: row;
+    padding: 5px;
+}
+.applicant>div>p {
+    margin: 0 7px;
+    font-weight: 600;
+}
+.applicant:nth-child(odd) {
+    background: #f0f0f0;
+}
+.applicant>div>p:first-child {
+    font-weight: lighter;
+}
+.logout {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    display: inline-block;
+    margin: 20px;
+}
+.logout:hover {
+    color: #000;
+}
+.add-ads .preview img {
+    width: 100%;
+    max-height: 100%;
+}

@@ -1,0 +1,201 @@
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #FF0000;
+    z-index: 10;
+    transition: all 0.5s;
+    font-family: 'Raleway', sans-serif;
+}
+.navigation-wrap {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    flex-flow: row;
+    transition: all 0.5s;
+    position: relative;
+}
+.triton-logo-container {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255,255,255,1);
+    box-shadow: 0 0 8px #000;
+    transition: all 0.5s;
+}
+.triton-logo {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-image: url(../Media/Images/logo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.navigation-bind {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+.nav-links {
+    display: none;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.nav-links a {
+    display: block;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 12pt;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px #000;
+    border-bottom: 2px solid transparent;
+    transition: border 0.5s;
+}
+.nav-links a:hover {
+    border-bottom: 2px solid #fff;
+}
+.nav-links span {
+    font-size: 12pt;
+    text-shadow: 1px 1px 1px #000;
+    font-weight: 600;
+    color: #FFF;
+    border-bottom: 2px solid transparent;
+    transition: border 0.5s;
+}
+.nav-links span:hover {
+    cursor: pointer;
+    border-bottom: 2px solid #fff;
+}
+.nav-links .dropdown {
+    position: relative;
+}
+.nav-links .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 175px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 3px 3px  8px #343434;
+    overflow: hidden;
+    z-index: 100;
+    display: none;
+}
+.nav-links .dropdown-content a {
+    color: #555;
+    text-shadow: none;
+    padding: 5px;
+    font-size: 10pt;
+}
+.nav-links .dropdown-content a:hover {
+    background: #f5f5f5;
+}
+.nav-links .icon {
+    margin-left: 6px;
+}
+.triton-brand {
+    margin: 5px 0;
+}
+.triton-brand .triton-name a {
+    display: block;
+    font-size: 12pt;
+    text-shadow: 1px 1px 1px #000;
+    font-weight: 600;
+    color: #FFF;
+    text-decoration: none;
+}
+.triton-brand .triton-name a p {
+    border-bottom: 2px solid transparent;
+    transition: border 0.5s;
+    font-size: 20pt;
+}
+.triton-brand .triton-name a span {
+    display: block;
+    border-bottom: 2px solid transparent;
+    transition: border 0.5s;
+    font-size: 11pt;
+}
+.triton-brand {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.triton-brand .triton-social {
+   margin: 5px;
+}
+.triton-brand .triton-social a {
+    color: #3B5998;
+    font-size: 18pt;
+    display: block;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border 0.5s;
+}
+.triton-brand .triton-social span {
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 12pt;
+    margin: 0 5px;
+}
+.triton-brand .triton-social a:hover {
+    border-bottom: 2px solid #FFF;
+}
+.article ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.up {
+    font-weight: 900;
+    font-size: 18pt;
+}
+.low {
+    font-weight: 600;
+}
+.shrink {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #FF0000;
+    z-index: 10;
+    transition: all 0.5s;
+    font-family: 'Raleway', sans-serif;
+}
+.shrink .navigation-wrap {
+    width: 80%;
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    flex-flow: row;
+    transition: all 0.5s;
+}
+.shrink .triton-logo-container {
+    height: 45px;
+    width: 45px;
+    transition: all 0.5s;
+}
+.shrink .navigation-bind {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.shrink .nav-links a, .shrink .nav-links .dropdown {
+    margin: auto 10px;
+    padding: 0;
+    padding: 3px;
+}
+.shrink .triton-brand .triton-name {
+    display: none;
+}
+.shrink .triton-brand .triton-social a{
+    font-size: 15pt;
+}

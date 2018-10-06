@@ -1,0 +1,845 @@
+* {
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+.mrg {
+    margin-left: 40px;
+}
+li {
+    margin: 10px 0;
+}
+a,
+button,
+span {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 150px auto;
+    padding: 25px 0;
+    width: 80%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.content,
+.article {
+    font-family: 'Raleway', sans-serif;
+    padding: 15px 10px;
+    color: #141823;
+}
+
+.content p,
+.article p {
+    margin: 15px 0;
+}
+
+header {
+    font-family: 'Open Sans', sans-serif;
+    padding: 15px 10px;
+    color: #141823;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 22pt;
+    margin: 15px 0;
+    color: #FFF;
+}
+
+.header h2 {
+    font-size: 11pt;
+    padding: 5px 0;
+    margin: 15px 0;
+    font-weight: 500;
+    color: #FFF;
+    text-shadow: 0 0 1px #000;
+}
+.triton-coach p {
+    color: #FFF;
+    text-shadow: 0 0 1px #000;
+}
+.sub-header h1 {
+    font-size: 16pt;
+    margin: 10px 0;
+    color: #FFF;
+    text-shadow: 0 0 1px #000;
+}
+
+.sub-header h2 {
+    font-size: 10pt;
+    padding: 5px 0;
+    margin: 15px 0;
+    color: #FFF;
+    text-shadow: 0 0 1px #000;
+}
+
+.sub-footer {
+    font-size: 11pt;
+    font-style: italic;
+    margin: 20px 0;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type=text],
+input[type=password],
+input[type=tel],
+input[type=submit],
+input[type=date],
+select,
+button {
+    border: none;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #141823;
+    display: block;
+    margin: 8px 0;
+    padding: 7px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type=submit] {
+    background: #0066FF;
+    color: #FFF;
+    font-weight: 600;
+    padding: 5px 15px;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+    background: #0000FF;
+}
+
+@media only screen and (max-width: 320px) {
+    * {
+        box-sizing: border-box;
+    }
+    .triton-brand {
+        flex-flow: column!important;
+    }
+    .triton-name a span{
+        display: none!important;
+    }
+    .triton-slide-img img {
+        height: 100%!important;
+    }
+}
+@media only screen and (max-width: 640px) {
+    * {
+        box-sizing: border-box;
+    }
+    .advertisement {
+        width: 90% !important;
+        height: 175px !important;
+        margin: 10px auto !important;
+    }
+    .container {
+        width: 100% !important;
+        margin: 100px 0!important;
+        padding: 0 10px;
+    }
+    header {
+        padding: 5px !important;
+    }
+    .header h1 {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 18pt!important;
+    }
+    .header h2 {
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: justify!important;
+    }
+    .sub-header h1 {
+        font-size: 13pt!important;
+        padding: 0!important;
+    }
+    .sub-header h2 {
+        font-size: 9pt!important;
+        padding: 0!important;
+    }
+    .content p {
+        margin: 0!important;
+        font-size: 11pt!important;
+    }
+    #dropdown-nav {
+        display: block !important;
+    }
+    .triton-banner {
+        background-attachment: scroll!important;
+        flex-flow: column!important;
+        height: auto!important;
+        margin: auto 0!important;
+        margin-top: 50px!important;
+        padding: 0!important;
+    }
+    .triton-banner .triton-slideshow {
+        margin:0!important;
+        height: auto!Important;
+    }
+    .triton-banner .triton-slideshow img {
+        margin: 0 auto!important;
+    }
+    .triton-slide-img img {
+        height: 100%!important;
+    }
+    .navigation-wrap {
+        width: 100% !important;
+        padding: 5px !important;
+    }
+    .triton-logo-container {
+        height: 45px !important;
+        width: 45px !important;
+        margin: auto 5px!important;
+    }
+    .navigation-bind {
+        display: flex;
+        flex-flow: row-reverse !important;
+        justify-content: space-between;
+    }
+    .triton-brand {
+        margin: 0!important;
+    }
+    .triton-social {
+        margin: 0!important;
+        padding: 0!important;
+        display: flex;
+        flex-flow: column!important;
+        justify-content: center!important;
+    }
+    .triton-brand .triton-name {
+        margin: 0!important;
+        padding: 0!important;
+    }
+    .triton-brand .triton-name a p, .triton-social a {
+        font-size: 11pt!important;
+    }
+    .triton-brand .triton-name a span, .triton-social span {
+        font-size: 9pt!important;
+    }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-flow: column!important;
+        text-align: center!important;
+        background: #FFF;
+    }
+    .nav-links a, .nav-links span {
+        color: #000!important;
+        text-shadow: none!important;
+    }
+    .shrink .triton-logo-container {
+        height: 35px!important;
+        width: 35px!important;
+    }
+    .triton-gdln-welcome .content p {
+        text-align: justify!important;
+        margin: 10px 0!important;
+    }
+    .gdln-wrap .sub-header, .reg-wrap .sub-header, .meet-wrap .sub-header {
+        width: 100%!important;
+        text-align: center!important;
+    }
+    .gdln-wrap .content, .reg-wrap .content, .meet-wrap .content {
+        width: 100%!important;
+        text-align: justify!important;
+        margin: 0!important;
+        padding: 15px!important;
+    }
+    .gdln-wrap, .meet-wrap, .reg-wrap {
+        width: 100%!important;
+        flex-flow: column!important;
+    }
+    .triton-gallery, .triton-athletes, .triton-board-members .content, .triton-products {
+        grid-template-columns: repeat(2, 1fr)!important;
+        grid-auto-rows: minmax(220px, 220px)!important;
+        margin: 0 15px!important;
+    }
+    .athlete-max-view, .display-product-container {
+        flex-flow: column!important;
+    }
+    .product-caption, .product-image {
+        width: 100%!important;
+        margin: auto!important;
+    }
+    .product-image {
+        height: 275px!important;
+    }
+    .product-image img {
+        height: 100%!important;
+    }
+    .product-caption {
+        padding: 5px!important;
+        margin: 10px 0;
+    }
+    .product-caption h1 {
+        font-size: 14pt!important;
+        margin: 5px 0!important;
+    }
+    .product-caption h2 {
+        font-size: 11pt!important;
+    }
+    .product-caption p {
+        font-size: 9pt!important;
+    }
+    #closeimg, #closeAthlete {
+        font-size: 15pt!important;
+    }
+    .ahlete-max-dp {
+        height: 150px!important;
+        width: 150px!important;
+        border-radius: 0;
+    }
+    .triton-coach {
+        flex-flow: column!important;
+        margin: auto!important;
+        width: 100%!important;
+    }
+    .triton-coach-info {
+        margin: auto!important;
+        display: flex;
+        flex-flow:column!important;
+        width: 100%!important;
+    }
+    .triton-coach-intro, .member-intro {
+        width: 100%!important;
+        padding: 0 20px!important;
+    }
+    .triton-coach-intro p, .member-intro p{
+        text-align: justify!important;
+    }
+    .triton-board-members .content {
+        flex-flow: column!important;
+    }
+    .triton-member {
+        display: flex;
+        flex-flow: column!important;
+        width: 100%!important;
+    }
+    .triton-member .sub-header {
+        width: 100%!important;
+    }
+    .registration-form form div {
+        width: 100%;
+        display: flex;
+        flex-flow: column!important;
+    }
+    .triton-membership {
+        display: flex;
+        flex-flow: column!important;
+    }
+    .triton-membership>div {
+        width: 100%!important;
+    }
+    .registration-form form input, .registration-form form select {
+        margin: 5px 0!important;
+        width: 100%!important;
+    }
+    .admin-container {
+        flex-flow: column!important;
+        width: 100%!important;
+        margin: auto!important;
+    }
+    .admin-container .sub-container {
+        width: 100%!important;
+    }
+    .admin-container .gallery-item-grid, .products-item-grid {
+        grid-template-columns: repeat(2, 1fr)!important;
+    }
+    .admin-container .preview {
+        width: 25%;
+    }
+    .admin-container .preview img {
+        width: 100%;
+        height: 50%;
+    }
+    .footer footer{
+        flex-flow: column!important;
+    }
+    .footer-wrap, .license {
+        flex-flow: column!important;
+        justify-content: flex-start!important;
+        text-align: center;
+    }
+    .triton-events {
+        flex-flow: column!important;
+    }
+    .triton-events .triton-events-wrapper {
+        width: auto!important;
+    }
+    .event {
+        flex-flow: column!important;
+    }
+    .event .content {
+        width: 100%!important;
+        word-break: break-all;
+    }
+    .triton-events .advertisement {
+        width: 100%!important;
+    }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 799px) {
+    * {
+        box-sizing: border-box;
+    }
+    .advertisement {
+        width: 90% !important;
+        height: 175px !important;
+        margin: 10px auto !important;
+    }
+    .container {
+        width: 100%;
+        margin: 75px auto!important;
+        padding: 15px!important;
+    }
+    header {
+        padding: 7px!important;
+    }
+    .header h1 {
+        margin: 0!important;
+        padding: 0!important;
+        font-size: 20pt!important;
+    }
+    .header h2 {
+        margin: 0!important;
+        padding: 0!important;
+        text-align: justify!important;
+    }
+    .sub-header h1 {
+        font-size: 15pt!important;
+    }
+    .sub-header h2 {
+        font-size: 11pt!important;
+    }
+    .content p {
+        margin: 0!important;
+        font-size: 12pt!important;
+    }
+    #dropdown-nav {
+        display: block!important;
+    }
+    .triton-slide-img img {
+        height: 100%!important;
+    }
+    .navigation-wrap {
+        padding: 10px!important;
+        width: 100%!important;
+    }
+    .triton-logo-container {
+        width: 55px!important;
+        height: 55px!important;
+        margin: auto 5px!important;
+    }
+    .navigation-bind {
+        display: flex;
+        flex-flow: row-reverse!important;
+        justify-content: space-between;
+    }
+    .triton-brand {
+        margin: 0!important;
+    }
+    .triton-social {
+        margin: 0 10px!important;
+        padding: 0!important;
+        display: flex;
+        flex-flow: column!important;
+        justify-content: center!important;
+    }
+    .triton-brand .triton-name {
+        margin: 0 15px!important;
+        padding: 0!important;
+    }
+    .triton-brand .triton-name a p, .triton-social a {
+        font-size: 12pt!important;
+    }
+    .triton-brand .triton-name a span, .triton-social span {
+        font-size: 9pt!important;
+    }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-flow: column!important;
+        text-align: center!important;
+        background: #FFF;
+    }
+    .triton-banner {
+        background-attachment: scroll!important;
+        flex-flow: column!important;
+        height: auto!important;
+        margin: auto 0!important;
+        margin-top: 100px!important;
+        padding: 0!important;
+    }
+    .triton-banner .triton-slideshow {
+        margin:0!important;
+        height: auto!Important;
+    }
+    .triton-banner img, .triton-banner .triton-slideshow {
+        margin: 0!important;
+    }
+    .nav-links a, .nav-links span {
+        color: #000!important;
+        text-shadow: none!important;
+    }
+    .shrink .triton-logo-container {
+        height: 35px!important;
+        width: 35px!important;
+    }
+    .triton-gallery, .triton-athletes, .triton-board-members .content, .triton-products {
+        grid-template-columns: repeat(2, 1fr)!important;
+        grid-auto-rows: minmax(220px, 220px)!important;
+        margin: 0 15px!important;
+    }
+    .athlete-max-view, .display-product-container {
+        flex-flow: column!important;
+    }
+    .product-caption, .product-image {
+        width: 100%!important;
+        margin: auto!important;
+    }
+    .product-image {
+        height: 275px!important;
+    }
+    .product-image img {
+        height: 100%!important;
+    }
+    .product-caption {
+        padding: 5px!important;
+        margin: 10px 0;
+    }
+    .product-caption h1 {
+        font-size: 14pt!important;
+        margin: 5px 0!important;
+    }
+    .product-caption h2 {
+        font-size: 11pt!important;
+    }
+    .product-caption p {
+        font-size: 9pt!important;
+    }
+    .triton-coach {
+        flex-flow: column!important;
+        margin: auto!important;
+        width: 100%!important;
+    }
+    .triton-coach-info {
+        margin: auto!important;
+        display: flex;
+        flex-flow:column!important;
+        width: 100%!important;
+    }
+    .triton-coach-intro, .member-intro {
+        width: 100%!important;
+        padding: 0 20px!important;
+    }
+    .triton-coach-intro p, .member-intro p{
+        text-align: justify!important;
+    }
+    .gdln-wrap, .greg-wrap, .meet-wrap {
+        width: 100%!important;
+    }
+    .admin-container {
+        flex-flow: column!important;
+        width: 100%!important;
+        margin: auto!important;
+    }
+    .admin-container .sub-container {
+        width: 100%!important;
+    }
+    .admin-container .gallery-item-grid, .products-item-grid {
+        grid-template-columns: repeat(2, 1fr)!important;
+    }
+    .admin-container .preview {
+        width: 25%;
+    }
+    .admin-container .preview img {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+
+@media only screen and (min-width: 800px) and (max-width: 991px) {
+    header {
+        padding: 7px!important;
+    }
+    .triton-slide-img img {
+        height: 100%!important;
+    }
+    .header h1 {
+        margin: 0!important;
+        padding: 0!important;
+        font-size: 20pt!important;
+    }
+    .header h2 {
+        margin: 0!important;
+        padding: 0!important;
+        text-align: justify!important;
+    }
+    .sub-header h1 {
+        font-size: 15pt!important;
+    }
+    .sub-header h2 {
+        font-size: 11pt!important;
+    }
+    .content p {
+        margin: 0!important;
+        font-size: 12pt!important;
+    }
+    .container {
+        width: 100%;
+        margin: 100px 0!important;
+    }
+    .triton-banner {
+        background-attachment: scroll!important;
+        flex-flow: column!important;
+        height: auto!important;
+        margin: auto 0!important;
+        margin-top: 100px!important;
+        padding: 0!important;
+    }
+    .triton-banner .triton-slideshow {
+        margin:0!important;
+        height: auto!Important;
+    }
+    .triton-banner .triton-slideshow, .triton-slideshow img {
+        margin:0!important;
+    }
+    .navigation-wrap {
+        width: 100%!Important;
+        padding: 10px!important;
+    }
+    .nav-links {
+        display: flex!important;
+        margin: 0!important;
+    }
+    .triton-brand {
+        margin: 0!important;
+    }
+    .triton-social {
+        margin: 0 10px!important;
+        padding: 0!important;
+        display: flex;
+        flex-flow: column!important;
+        justify-content: center!important;
+    }
+    .triton-brand .triton-name {
+        margin: 0px!important;
+        padding: 0!important;
+    }
+    .triton-brand .triton-name a p, .triton-social a {
+        font-size: 12pt!important;
+    }
+    .triton-brand .triton-name a span, .triton-social span {
+        font-size: 9pt!important;
+    }
+    .shrink .navigation-wrap {
+        width: 100%!important;
+    }
+    .shrink .triton-logo-container {
+        height: 45px!important;
+        width: 45px!important;
+    }
+    .nav-links a, .nav-links span {
+        font-size: 11pt!important;
+    }
+    .triton-gallery, .triton-athletes, .triton-board-members .content, .triton-products {
+        grid-template-columns: repeat(2, 1fr)!important;
+        grid-auto-rows: minmax(420px, 420px)!important;
+        margin: 0 15px!important;
+    }
+    .triton-coach {
+        flex-flow: column!important;
+        margin: auto!important;
+        width: 100%!important;
+    }
+    .triton-coach-info {
+        margin: auto!important;
+        display: flex;
+        flex-flow:column!important;
+        width: 100%!important;
+    }
+    .triton-coach-intro, .member-intro {
+        width: 100%!important;
+        padding: 0 20px!important;
+    }
+    .triton-coach-intro p, .member-intro p{
+        text-align: justify!important;
+    }
+    .admin-container {
+        flex-flow: column!important;
+        width: 100%!important;
+        margin: auto!important;
+    }
+    .admin-container .sub-container {
+        width: 100%!important;
+    }
+    .admin-container .gallery-item-grid, .products-item-grid {
+        grid-template-columns: repeat(2, 1fr)!important;
+    }
+    .admin-container .preview {
+        width: 25%;
+    }
+    .admin-container .preview img {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    header {
+        padding: 7px!important;
+    }
+    .triton-slide-img img {
+        height: 100%!important;
+    }
+    .header h1 {
+        margin: 0!important;
+        padding: 0!important;
+        font-size: 20pt!important;
+    }
+    .triton-banner {
+        background-attachment: scroll!important;
+        flex-flow: column!important;
+        height: auto!important;
+        margin: auto 0!important;
+        margin-top: 100px!important;
+        padding: 0!important;
+    }
+    .triton-banner .triton-slideshow {
+        margin:0!important;
+        height: auto!Important;
+    }
+    .triton-banner .triton-slideshow, .triton-slideshow img {
+        margin:0!important;
+    }
+    .header h2 {
+        margin: 0!important;
+        padding: 0!important;
+        text-align: justify!important;
+    }
+    .sub-header h1 {
+        font-size: 15pt!important;
+    }
+    .sub-header h2 {
+        font-size: 11pt!important;
+    }
+    .content p {
+        margin: 0!important;
+        font-size: 12pt!important;
+    }
+    .container {
+        width: 100%;
+        margin: 100px 0!important;
+    }
+    .navigation-wrap {
+        width: 100%!Important;
+        padding: 10px!important;
+    }
+    .triton-logo-container {
+        width: 75px!important;
+        height: 75px!important;
+        margin: auto 5px!important;
+    }
+    .nav-links {
+        display: flex!important;
+        margin: 0!important;
+    }
+    .triton-brand {
+        margin: 0!important;
+    }
+    .triton-social {
+        margin: 0 10px!important;
+        padding: 0!important;
+        display: flex;
+        flex-flow: column!important;
+        justify-content: center!important;
+    }
+    .triton-brand .triton-name {
+        margin: 0px!important;
+        padding: 0!important;
+    }
+    .triton-brand .triton-name a p, .triton-social a {
+        font-size: 12pt!important;
+    }
+    .triton-brand .triton-name a span, .triton-social span {
+        font-size: 9pt!important;
+    }
+    .shrink .navigation-wrap {
+        width: 100%!important;
+    }
+    .shrink .triton-logo-container {
+        height: 45px!important;
+        width: 45px!important;
+    }
+    .nav-links a, .nav-links span {
+        font-size: 11pt!important;
+    }
+    .triton-gallery, .triton-athletes, .triton-board-members .content, .triton-products {
+        grid-template-columns: repeat(2, 1fr)!important;
+        grid-auto-rows: minmax(420px, 420px)!important;
+        margin: 0 15px!important;
+    }
+    .triton-coach {
+        flex-flow: column!important;
+        margin: auto!important;
+        width: 100%!important;
+    }
+    .triton-coach-info {
+        margin: auto!important;
+        display: flex;
+        flex-flow:column!important;
+        width: 100%!important;
+    }
+    .triton-coach-intro, .member-intro {
+        width: 100%!important;
+        padding: 0 20px!important;
+    }
+    .triton-coach-intro p, .member-intro p{
+        text-align: justify!important;
+    }
+    .admin-container {
+        flex-flow: column!important;
+        width: 100%!important;
+        margin: auto!important;
+    }
+    .admin-container .sub-container {
+        width: 100%!important;
+    }
+    .admin-container .gallery-item-grid, .products-item-grid {
+        grid-template-columns: repeat(2, 1fr)!important;
+    }
+    .admin-container .preview {
+        width: 25%;
+    }
+    .admin-container .preview img {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .nav-links {
+        display: flex!important;
+    }
+}
