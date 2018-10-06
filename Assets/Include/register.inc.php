@@ -1,8 +1,11 @@
 <div class="register">
+    <div class="form-header">
+        <h2>Sign Up</h2>
+    </div>
     <form action="<?php echo $current_file; ?>">
         <div class="form-container">
-            <div class="form-header">
-                <h2>Sign in</h2>
+            <div class="input-field">
+                <input type="text" name="verif" placeholder="Membership Verification Code">
             </div>
             <div class="input-field">
                 <input type="text" name="username" placeholder="Username">

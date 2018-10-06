@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #444;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+.input-field, .form-action {
+    padding: 10px;
+    margin: 15px 0;
+}
+.input-field input[type=text], .input-field input[type=password] {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #ff9696;
+    padding: 5px;
+    font-size: 13pt;
+    width: 100%;
+    display: block;
+}
+.input-field input[type=text]:hover, .input-field input[type=password]:hover {
+    border-bottom: 2px solid #FF0000;
+}
+.input-field input[type=text]:focus, .input-field input[type=password]:focus {
+    border-bottom: 2px solid #FF0000;
+}
+.form-action input[type=submit] {
+    outline: none;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    font-size: 13pt;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.form-action input[type=submit]:hover, .form-action input[type=submit]:focus {
+    background: #005fc4;
+    cursor: pointer;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+.sub-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.container .header {
+    padding: 40px 0;
+    margin: 50px 0;
+    margin-top: 0;
+}
+.form-header {
+    text-align: center;
+    background: #ff0000a6;
+    padding: 10px;
+    color: #000000;
+}
+.login-container {
+    width: 30%;
+}
+.login {
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #ccc;
+    background: #FFF;
+    width: 350px;
+    overflow: hidden;
+}
+.login .form-action input[type=submit] {
+    display: block;
+    margin: auto;
+    margin-right: 0;
+}
+.register-container {
+    flex-grow: 1;
+    height: 590px;
+    background-image: url(../Media/Images/banner-one.JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 0 8px #ccc;
+    position: relative;
+    overflow: hidden;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0,0,0,0.5);
+}
+.notice {
+    color: #FFF;
+    font-size: 10pt;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.notice .notice-field {
+    margin: auto;
+}
+.notice .notice-field input[type=text]{
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    display: inline-block;
+    margin: auto;
+    font-size: 10pt;
+}
+.notice .notice-field input[type=submit] {
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background: #007bff;
+    color: #FFF;
+    padding: 5px;
+    margin: 0 10px;
+    font-weight: 600;
+}
