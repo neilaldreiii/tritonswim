@@ -24,7 +24,7 @@ if (loggedin()) {
                 <li><a href="lobby.php?admin=Athletes">Athletes</a></li>
                 <li><a href="lobby.php?admin=BM">Board Members</a></li>
                 <li><a href="lobby.php?admin=Events">Events</a></li>
-                <li><a href="lobby.php?admin=gallery">Gallery</a></li>
+                <li><a href="lobby.php?admin=Gallery">Gallery</a></li>
                 <li><a href="lobby.php?admin=Products">Products</a></li>
                 <li><a href="lobby.php?admin=Ads">Advertisements</a></li>
                 <li><a href="lobby.php?admin=Slides">Banner Slides</a></li>

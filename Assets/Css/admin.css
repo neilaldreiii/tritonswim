@@ -21,17 +21,22 @@ h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
 }
+
 .error {
     text-align: center;
     padding: 10px;
     font-weight: 600;
     color: tomato;
 }
-.input-field, .form-action {
+
+.input-field,
+.form-action {
     padding: 10px;
     margin: 15px 0;
 }
-.input-field input[type=text], .input-field input[type=password] {
+
+.input-field input[type=text],
+.input-field input[type=password] {
     outline: none;
     border: none;
     border-bottom: 2px solid #ff9696;
@@ -40,12 +45,41 @@ h6 {
     width: 100%;
     display: block;
 }
-.input-field input[type=text]:hover, .input-field input[type=password]:hover {
+
+.input-field input[type=text]:hover,
+.input-field input[type=password]:hover,
+.input-field textarea:hover {
     border-bottom: 2px solid #FF0000;
 }
-.input-field input[type=text]:focus, .input-field input[type=password]:focus {
+
+.input-field input[type=text]:focus,
+.input-field input[type=password]:focus,
+.input-field textarea:focus {
     border-bottom: 2px solid #FF0000;
 }
+
+.input-field textarea {
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    resize: none;
+    font-size: 13pt;
+    width: 100%;
+    height: 125px;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #ddd;
+    border-bottom: 2px solid #ff9696;
+}
+
+.input-field select {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #ff9696;
+    padding: 5px;
+    font-size: 13pt;
+}
+
 .form-action input[type=submit] {
     outline: none;
     border: none;
@@ -55,19 +89,24 @@ h6 {
     padding: 10px 20px;
     border-radius: 3px;
 }
-.form-action input[type=submit]:hover, .form-action input[type=submit]:focus {
+
+.form-action input[type=submit]:hover,
+.form-action input[type=submit]:focus {
     background: rgb(0, 95, 196);
     cursor: pointer;
 }
+
 .container {
     width: 80%;
     margin: auto;
 }
+
 .sub-container {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
 }
+
 .lobby-navigation {
     position: fixed;
     top: 0;
@@ -77,6 +116,7 @@ h6 {
     background: #FFF;
     box-shadow: 0 0 12px #ccc;
 }
+
 .lobby-navigation .lobby-navigation-wrap {
     padding: 10px;
     width: 80%;
@@ -85,10 +125,12 @@ h6 {
     flex-flow: row;
     justify-content: space-between;
 }
+
 .lobby-profile {
     display: flex;
     flex-flow: row;
 }
+
 .lobby-profile .lobby-avatar-container {
     border: 1px solid;
     height: 75px;
@@ -96,35 +138,41 @@ h6 {
     border-radius: 50%;
     margin: 0 10px;
 }
+
 .lobby-profile .lobby-profile-name {
     margin: auto;
 }
-.lobby-profile .lobby-profile-name  p{
+
+.lobby-profile .lobby-profile-name p {
     margin: 10px;
     padding: 0;
 }
- a.logout {
+
+a.logout {
     text-decoration: none;
     background: #343434;
     border-radius: 3px;
     display: block;
     margin: auto;
     margin-left: 30px;
-    color: #fff!important;
+    color: #fff !important;
     text-align: center;
 }
+
 .lobby-controls {
     display: flex;
     flex-flow: column;
     justify-content: center;
 }
-.lobby-controls ul{
+
+.lobby-controls ul {
     display: flex;
     flex-flow: row;
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
+
 .lobby-controls ul li a {
     display: block;
     padding: 10px;
@@ -132,20 +180,24 @@ h6 {
     text-decoration: none;
     color: #444;
 }
+
 .container .header {
     padding: 40px 0;
     margin: 50px 0;
     margin-top: 0;
 }
+
 .form-header {
     text-align: center;
     background: #ff0000a6;
     padding: 10px;
     color: #000000;
 }
+
 .login-container {
     width: 30%;
 }
+
 .login {
     margin: auto;
     border-radius: 10px;
@@ -154,11 +206,13 @@ h6 {
     width: 350px;
     overflow: hidden;
 }
+
 .login .form-action input[type=submit] {
     display: block;
     margin: auto;
     margin-right: 0;
 }
+
 .register-container {
     flex-grow: 1;
     height: 590px;
@@ -171,14 +225,16 @@ h6 {
     position: relative;
     overflow: hidden;
 }
+
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     padding: 10px;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
 }
+
 .notice {
     color: #FFF;
     font-size: 10pt;
@@ -186,10 +242,12 @@ h6 {
     flex-flow: row;
     justify-content: space-between;
 }
+
 .notice .notice-field {
     margin: auto;
 }
-.notice .notice-field input[type=text]{
+
+.notice .notice-field input[type=text] {
     outline: none;
     border: none;
     border-radius: 3px;
@@ -198,6 +256,7 @@ h6 {
     margin: auto;
     font-size: 10pt;
 }
+
 .notice .notice-field input[type=submit] {
     outline: none;
     border: none;
@@ -208,6 +267,7 @@ h6 {
     margin: 0 10px;
     font-weight: 600;
 }
+
 .register {
     margin: auto;
     border-radius: 10px;
@@ -216,15 +276,192 @@ h6 {
     width: 450px;
     overflow: hidden;
 }
+
 .register .form-action {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
 }
+
 .register .form-action a {
     color: #6c757d;
     display: block;
     margin: auto;
     margin-left: 0;
     border-radius: 3px;
+}
+
+.lobby {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.message-board {
+    display: flex;
+    flex-flow: column;
+    height: 525px;
+    width: 475px;
+    border-radius: 3px;
+    box-shadow: 0 0 12px #CCC;
+    overflow: hidden;
+}
+
+.message-preview {
+    display: block;
+    flex-grow: 1;
+    background: #FFF;
+    border-radius: 3px;
+    border-bottom: 1px solid #6c757d;
+    overflow: auto;
+}
+
+.message-form-container {
+    display: flex;
+    flex-flow: row;
+    margin: 15px 5px;
+    margin-bottom: 5px;
+}
+
+.message-form-container .message-field {
+    flex-grow: 1;
+}
+
+.message-form-container .message-field input[type=text] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ff9696;
+    padding: 5px;
+    border-radius: 3px;
+    width: 100%;
+    font-size: 12pt;
+}
+
+.message-form-container .message-form-action input[type=submit] {
+    outline: none;
+    border: none;
+    border: 1px solid #007bff;
+    background: #007bff;
+    color: #FFF;
+    font-size: 12pt;
+    display: block;
+    margin: auto;
+    margin-left: 15px;
+    padding: 5px;
+    font-weight: normal;
+    border-radius: 3px;
+}
+
+.athlete-row:nth-child(odd) {
+    background: #FFF;
+}
+
+.athlete-row:nth-child(even) {
+    background: #fafafa;
+}
+
+.athlete-row {
+    display: flex;
+    flex-flow: row;
+    margin: 15px 0;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.athlete-info {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.athlete-info .profile-image {
+    display: flex;
+    flex-flow: row;
+    margin: auto;
+    text-align: center;
+    font-size: 10pt;
+}
+
+.athlete-info .profile-image p {
+    margin: 5px 0;
+    padding: 0;
+}
+
+.athlete-info .profile-image img {
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: auto 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #ccc;
+}
+
+.athlete-intro-cat {
+    margin: 0 10px;
+    padding: 10px;
+    width: 50%;
+}
+
+.athlete-wrap p {
+    margin: 0;
+    padding: 5px;
+}
+
+.athlete-wrap p:first-child {
+    font-weight: 600;
+    font-size: 16pt;
+}
+
+.athlete-wrap p:last-child {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.athlete-row-controls {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.remove {
+    align-self: center;
+    display: block;
+    margin: auto;
+    outline: none;
+    border: none;
+    color: #FFF;
+    font-size: 13pt;
+    font-weight: 600;
+    padding: 10px;
+    background: #dc3545;
+    border-radius: 50px;
+    box-shadow: 3px 3px 12px #888;
+}
+
+.remove:hover {
+    cursor: pointer;
+    background: #c42f3e;
+}
+
+.add-athletes {
+    width: 50%;
+    margin: auto;
+    background: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 0 8px #ccc;
+}
+
+.add-athletes .form-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#introduce {
+    grid-column: 1/3;
+}
+
+#prime {
+    grid-column: 1/2;
 }

@@ -300,3 +300,22 @@ if(isset($_POST['showProduct'])) {
     }
 
 ?>
+
+<?php
+
+if(isset($_POST['generate'])) {
+
+    require 'Assets/Include/core.inc.php';
+    $key = $_POST['generate'];
+
+    if(!empty($key)) {
+
+        $generated = date("mdy").'-'.imagefilename(6);
+        $add = "INSERT INTO `verify` VALUES('', '".mysqli_real_escape_string($con, $generated)."', 'new')";
+        if($add_query = mysqli_query($con, $add)) {
+            echo '<p class="keyCodes">Verification Code: <b>'.$generated.'</b></p>';
+        }
+    }
+}
+
+?>
