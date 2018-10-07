@@ -21,7 +21,7 @@ function loggedin() {
 function getuserfield($field) {
     require 'connect.inc.php';
     
-    $query = "SELECT `$field` FROM `users` WHERE `userID`='".$_SESSION['user_id']."'";
+    $query = "SELECT `$field` FROM `admin` WHERE `id`='".$_SESSION['user_id']."'";
     
     if ($query_run = mysqli_query($con , $query)) {
         if ($query_result = mysqli_fetch_array($query_run)) {

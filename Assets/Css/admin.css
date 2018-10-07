@@ -49,14 +49,14 @@ h6 {
 .form-action input[type=submit] {
     outline: none;
     border: none;
-    background: #007bff;
+    background: rgb(0, 123, 255);
     color: #fff;
     font-size: 13pt;
     padding: 10px 20px;
     border-radius: 3px;
 }
 .form-action input[type=submit]:hover, .form-action input[type=submit]:focus {
-    background: #005fc4;
+    background: rgb(0, 95, 196);
     cursor: pointer;
 }
 .container {
@@ -67,6 +67,70 @@ h6 {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
+}
+.lobby-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #FFF;
+    box-shadow: 0 0 12px #ccc;
+}
+.lobby-navigation .lobby-navigation-wrap {
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.lobby-profile {
+    display: flex;
+    flex-flow: row;
+}
+.lobby-profile .lobby-avatar-container {
+    border: 1px solid;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+.lobby-profile .lobby-profile-name {
+    margin: auto;
+}
+.lobby-profile .lobby-profile-name  p{
+    margin: 10px;
+    padding: 0;
+}
+ a.logout {
+    text-decoration: none;
+    background: #343434;
+    border-radius: 3px;
+    display: block;
+    margin: auto;
+    margin-left: 30px;
+    color: #fff!important;
+    text-align: center;
+}
+.lobby-controls {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.lobby-controls ul{
+    display: flex;
+    flex-flow: row;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.lobby-controls ul li a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #444;
 }
 .container .header {
     padding: 40px 0;

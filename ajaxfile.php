@@ -286,7 +286,8 @@ if(isset($_POST['showProduct'])) {
 
                         } elseif($num_rows == 0) {
                             
-                            $add = "INSERT INTO `admin` VALUES('','".mysqli_real_escape_string($con, $username)."', '".mysqli_real_escape_string($con, $password_hash)."', '".mysqli_real_escape_string($con, $fname)."', '".mysqli_real_escape_string($con, $lname)."')";
+                            $add = "INSERT INTO `admin` VALUES('','".mysqli_real_escape_string($con, $username)."', '".mysqli_real_escape_string($con, $password_hash)."', '".mysqli_real_escape_string($con, $fname)."', '".mysqli_real_escape_string($con, $lname)."',
+                            'avatar_null')";
 
                             if($add_query = mysqli_query($con, $add)) {
                                 echo '<p>Registration Successfull. <a href="triton.php">Sign In</a></p>';
