@@ -39,7 +39,7 @@
     </div>
     <div class="admin-athletes-preview">
     <?php
-        $query = "SELECT * FROM `athletes` ORDER BY `category` DESC";
+        $query = "SELECT * FROM `athletes` ORDER BY `category` ASC";
         if($query_run = mysqli_query($con, $query)) {
             while($row = mysqli_fetch_array($query_run)) {
 

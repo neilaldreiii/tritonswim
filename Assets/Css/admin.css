@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     margin: 0;
     padding: 0;
     background: #f5f5f5;
@@ -18,7 +18,7 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: normal;
 }
 
@@ -35,8 +35,8 @@ h6 {
     margin: 15px 0;
 }
 
-.input-field input[type=text],
-.input-field input[type=password] {
+.input-field input[type="text"],
+.input-field input[type="password"] {
     outline: none;
     border: none;
     border-bottom: 2px solid #ff9696;
@@ -46,16 +46,16 @@ h6 {
     display: block;
 }
 
-.input-field input[type=text]:hover,
-.input-field input[type=password]:hover,
+.input-field input[type="text"]:hover,
+.input-field input[type="password"]:hover,
 .input-field textarea:hover {
-    border-bottom: 2px solid #FF0000;
+    border-bottom: 2px solid #ff0000;
 }
 
-.input-field input[type=text]:focus,
-.input-field input[type=password]:focus,
+.input-field input[type="text"]:focus,
+.input-field input[type="password"]:focus,
 .input-field textarea:focus {
-    border-bottom: 2px solid #FF0000;
+    border-bottom: 2px solid #ff0000;
 }
 
 .input-field textarea {
@@ -67,7 +67,7 @@ h6 {
     font-size: 13pt;
     width: 100%;
     height: 125px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     border: 1px solid #ddd;
     border-bottom: 2px solid #ff9696;
 }
@@ -80,7 +80,7 @@ h6 {
     font-size: 13pt;
 }
 
-.form-action input[type=submit] {
+.form-action input[type="submit"] {
     outline: none;
     border: none;
     background: rgb(0, 123, 255);
@@ -90,8 +90,8 @@ h6 {
     border-radius: 3px;
 }
 
-.form-action input[type=submit]:hover,
-.form-action input[type=submit]:focus {
+.form-action input[type="submit"]:hover,
+.form-action input[type="submit"]:focus {
     background: rgb(0, 95, 196);
     cursor: pointer;
 }
@@ -113,7 +113,7 @@ h6 {
     left: 0;
     right: 0;
     width: 100%;
-    background: #FFF;
+    background: #fff;
     box-shadow: 0 0 12px #ccc;
 }
 
@@ -202,12 +202,12 @@ a.logout {
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 0 8px #ccc;
-    background: #FFF;
+    background: #fff;
     width: 350px;
     overflow: hidden;
 }
 
-.login .form-action input[type=submit] {
+.login .form-action input[type="submit"] {
     display: block;
     margin: auto;
     margin-right: 0;
@@ -236,7 +236,7 @@ a.logout {
 }
 
 .notice {
-    color: #FFF;
+    color: #fff;
     font-size: 10pt;
     display: flex;
     flex-flow: row;
@@ -247,7 +247,7 @@ a.logout {
     margin: auto;
 }
 
-.notice .notice-field input[type=text] {
+.notice .notice-field input[type="text"] {
     outline: none;
     border: none;
     border-radius: 3px;
@@ -257,12 +257,12 @@ a.logout {
     font-size: 10pt;
 }
 
-.notice .notice-field input[type=submit] {
+.notice .notice-field input[type="submit"] {
     outline: none;
     border: none;
     border-radius: 3px;
     background: #007bff;
-    color: #FFF;
+    color: #fff;
     padding: 5px;
     margin: 0 10px;
     font-weight: 600;
@@ -272,7 +272,7 @@ a.logout {
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 0 8px #ccc;
-    background: #FFF;
+    background: #fff;
     width: 450px;
     overflow: hidden;
 }
@@ -303,14 +303,14 @@ a.logout {
     height: 525px;
     width: 475px;
     border-radius: 3px;
-    box-shadow: 0 0 12px #CCC;
+    box-shadow: 0 0 12px #ccc;
     overflow: hidden;
 }
 
 .message-preview {
     display: block;
     flex-grow: 1;
-    background: #FFF;
+    background: #fff;
     border-radius: 3px;
     border-bottom: 1px solid #6c757d;
     overflow: auto;
@@ -327,7 +327,7 @@ a.logout {
     flex-grow: 1;
 }
 
-.message-form-container .message-field input[type=text] {
+.message-form-container .message-field input[type="text"] {
     outline: none;
     border: none;
     border-bottom: 1px solid #ff9696;
@@ -337,12 +337,12 @@ a.logout {
     font-size: 12pt;
 }
 
-.message-form-container .message-form-action input[type=submit] {
+.message-form-container .message-form-action input[type="submit"] {
     outline: none;
     border: none;
     border: 1px solid #007bff;
     background: #007bff;
-    color: #FFF;
+    color: #fff;
     font-size: 12pt;
     display: block;
     margin: auto;
@@ -353,14 +353,15 @@ a.logout {
 }
 
 .athlete-row:nth-child(odd) {
-    background: #FFF;
+    background: #fff;
 }
 
 .athlete-row:nth-child(even) {
     background: #fafafa;
 }
 
-.athlete-row {
+.athlete-row,
+.board-row {
     display: flex;
     flex-flow: row;
     margin: 15px 0;
@@ -369,13 +370,15 @@ a.logout {
     padding: 10px 0;
 }
 
-.athlete-info {
+.athlete-info,
+.board-info {
     display: flex;
     flex-flow: column;
     justify-content: center;
 }
 
-.athlete-info .profile-image {
+.athlete-info .profile-image,
+.board-info .board-pp {
     display: flex;
     flex-flow: row;
     margin: auto;
@@ -388,7 +391,8 @@ a.logout {
     padding: 0;
 }
 
-.athlete-info .profile-image img {
+.athlete-info .profile-image img,
+.board-info .board-pp img {
     display: block;
     height: 150px;
     width: 150px;
@@ -397,28 +401,33 @@ a.logout {
     box-shadow: 0 0 12px #ccc;
 }
 
-.athlete-intro-cat {
+.athlete-intro-cat,
+.board-intro {
     margin: 0 10px;
     padding: 10px;
     width: 50%;
 }
 
-.athlete-wrap p {
+.athlete-wrap p,
+.board-wrap {
     margin: 0;
     padding: 5px;
 }
 
-.athlete-wrap p:first-child {
+.athlete-wrap p:first-child,
+.board-wrap p:first-child {
     font-weight: 600;
     font-size: 16pt;
 }
 
-.athlete-wrap p:last-child {
+.athlete-wrap p:last-child,
+.board-wrap p:last-child {
     color: #007bff;
     font-weight: 600;
 }
 
-.athlete-row-controls {
+.athlete-row-controls,
+.board-row-controls {
     flex-grow: 1;
     display: flex;
     flex-flow: column;
@@ -431,7 +440,7 @@ a.logout {
     margin: auto;
     outline: none;
     border: none;
-    color: #FFF;
+    color: #fff;
     font-size: 13pt;
     font-weight: 600;
     padding: 10px;
@@ -448,9 +457,9 @@ a.logout {
 .add-athletes {
     width: 50%;
     margin: auto;
-    background: #FFF;
+    background: #fff;
     border-radius: 3px;
-    box-shadow: 0 0 8px #ccc;
+    box-shadow: 0 0 12px #ccc;
 }
 
 .add-athletes .form-container {
@@ -464,4 +473,13 @@ a.logout {
 
 #prime {
     grid-column: 1/2;
+}
+
+.add-bm {
+    width: 50%;
+    margin: auto;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 12px #ccc;
+    overflow: hidden;
 }
