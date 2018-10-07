@@ -9,6 +9,7 @@
                     <input type="text" name="position" placeholder="Position">
                 </div>
                 <div class="input-field">
+                    <label for="">Board Member Photo</label>
                     <input type="file" name="bmImage">
                 </div>
                 <div class="form-action">

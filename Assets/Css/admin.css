@@ -1,13 +1,13 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-  color: #444;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #444;
 }
 
 h1,
@@ -16,504 +16,512 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
 }
 
 .error {
-  text-align: center;
-  padding: 10px;
-  font-weight: 600;
-  color: tomato;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    color: tomato;
 }
 
 .input-field,
 .form-action {
-  padding: 10px;
-  margin: 15px 0;
+    padding: 10px;
+    margin: 15px 0;
 }
 
 .input-field input[type="text"],
 .input-field input[type="password"] {
-  outline: none;
-  border: none;
-  border-bottom: 2px solid #ff9696;
-  padding: 5px;
-  font-size: 13pt;
-  width: 100%;
-  display: block;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #ff9696;
+    padding: 5px;
+    font-size: 13pt;
+    width: 100%;
+    display: block;
 }
 
 .input-field input[type="text"]:hover,
 .input-field input[type="password"]:hover,
 .input-field textarea:hover {
-  border-bottom: 2px solid #ff0000;
+    border-bottom: 2px solid #ff0000;
 }
 
 .input-field input[type="text"]:focus,
 .input-field input[type="password"]:focus,
 .input-field textarea:focus {
-  border-bottom: 2px solid #ff0000;
+    border-bottom: 2px solid #ff0000;
 }
 
 .input-field textarea {
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  padding: 5px;
-  resize: none;
-  font-size: 13pt;
-  width: 100%;
-  height: 125px;
-  font-family: "Open Sans", sans-serif;
-  border: 1px solid #ddd;
-  border-bottom: 2px solid #ff9696;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    resize: none;
+    font-size: 13pt;
+    width: 100%;
+    height: 125px;
+    font-family: "Open Sans", sans-serif;
+    border: 1px solid #ddd;
+    border-bottom: 2px solid #ff9696;
 }
 
 .input-field select {
-  outline: none;
-  border: none;
-  border-bottom: 2px solid #ff9696;
-  padding: 5px;
-  font-size: 13pt;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #ff9696;
+    padding: 5px;
+    font-size: 13pt;
 }
 
 .form-action input[type="submit"] {
-  outline: none;
-  border: none;
-  background: rgb(0, 123, 255);
-  color: #fff;
-  font-size: 13pt;
-  padding: 10px 20px;
-  border-radius: 3px;
+    outline: none;
+    border: none;
+    background: rgb(0, 123, 255);
+    color: #fff;
+    font-size: 13pt;
+    padding: 10px 20px;
+    border-radius: 3px;
 }
 
 .form-action input[type="submit"]:hover,
 .form-action input[type="submit"]:focus {
-  background: rgb(0, 95, 196);
-  cursor: pointer;
+    background: rgb(0, 95, 196);
+    cursor: pointer;
 }
 
 .container {
-  width: 80%;
-  margin: auto;
+    width: 80%;
+    margin: auto;
 }
 
 .sub-container {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .lobby-navigation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 0 12px #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 12px #ccc;
 }
 
 .lobby-navigation .lobby-navigation-wrap {
-  padding: 10px;
-  width: 80%;
-  margin: auto;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .lobby-profile {
-  display: flex;
-  flex-flow: row;
+    display: flex;
+    flex-flow: row;
 }
 
 .lobby-profile .lobby-avatar-container {
-  border: 1px solid;
-  height: 75px;
-  width: 75px;
-  border-radius: 50%;
-  margin: 0 10px;
+    border: 1px solid;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    margin: 0 10px;
 }
 
 .lobby-profile .lobby-profile-name {
-  margin: auto;
+    margin: auto;
 }
 
 .lobby-profile .lobby-profile-name p {
-  margin: 10px;
-  padding: 0;
+    margin: 10px;
+    padding: 0;
 }
 
 a.logout {
-  text-decoration: none;
-  background: #343434;
-  border-radius: 3px;
-  display: block;
-  margin: auto;
-  margin-left: 30px;
-  color: #fff !important;
-  text-align: center;
+    text-decoration: none;
+    background: #343434;
+    border-radius: 3px;
+    display: block;
+    margin: auto;
+    margin-left: 30px;
+    color: #fff !important;
+    text-align: center;
 }
 
 .lobby-controls {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 
 .lobby-controls ul {
-  display: flex;
-  flex-flow: row;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+    display: flex;
+    flex-flow: row;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 .lobby-controls ul li a {
-  display: block;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  color: #444;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #444;
 }
 
 .container .header {
-  padding: 40px 0;
-  margin: 50px 0;
-  margin-top: 0;
+    padding: 40px 0;
+    margin: 50px 0;
+    margin-top: 0;
 }
 
 .form-header {
-  text-align: center;
-  background: #ff0000a6;
-  padding: 10px;
-  color: #000000;
+    text-align: center;
+    background: #ff0000a6;
+    padding: 10px;
+    color: #000000;
 }
 
 .login-container {
-  width: 30%;
+    width: 30%;
 }
 
 .login {
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 8px #ccc;
-  background: #fff;
-  width: 350px;
-  overflow: hidden;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #ccc;
+    background: #fff;
+    width: 350px;
+    overflow: hidden;
 }
 
 .login .form-action input[type="submit"] {
-  display: block;
-  margin: auto;
-  margin-right: 0;
+    display: block;
+    margin: auto;
+    margin-right: 0;
 }
 
 .register-container {
-  flex-grow: 1;
-  height: 590px;
-  background-image: url(../Media/Images/banner-one.JPG);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 3px;
-  box-shadow: 0 0 8px #343434;
-  position: relative;
-  overflow: hidden;
+    flex-grow: 1;
+    height: 590px;
+    background-image: url(../Media/Images/banner-one.JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 0 8px #343434;
+    position: relative;
+    overflow: hidden;
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .notice {
-  color: #fff;
-  font-size: 10pt;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+    color: #fff;
+    font-size: 10pt;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .notice .notice-field {
-  margin: auto;
+    margin: auto;
 }
 
 .notice .notice-field input[type="text"] {
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  padding: 5px;
-  display: inline-block;
-  margin: auto;
-  font-size: 10pt;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    display: inline-block;
+    margin: auto;
+    font-size: 10pt;
 }
 
 .notice .notice-field input[type="submit"] {
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  background: #007bff;
-  color: #fff;
-  padding: 5px;
-  margin: 0 10px;
-  font-weight: 600;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background: #007bff;
+    color: #fff;
+    padding: 5px;
+    margin: 0 10px;
+    font-weight: 600;
 }
 
 .register {
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 8px #ccc;
-  background: #fff;
-  width: 450px;
-  overflow: hidden;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #ccc;
+    background: #fff;
+    width: 450px;
+    overflow: hidden;
 }
 
 .register .form-action {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .register .form-action a {
-  color: #6c757d;
-  display: block;
-  margin: auto;
-  margin-left: 0;
-  border-radius: 3px;
+    color: #6c757d;
+    display: block;
+    margin: auto;
+    margin-left: 0;
+    border-radius: 3px;
 }
 
 .lobby {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .message-board {
-  display: flex;
-  flex-flow: column;
-  height: 525px;
-  width: 475px;
-  border-radius: 3px;
-  box-shadow: 0 0 12px #ccc;
-  overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    height: 525px;
+    width: 475px;
+    border-radius: 3px;
+    box-shadow: 0 0 12px #ccc;
+    overflow: hidden;
 }
 
 .message-preview {
-  display: block;
-  flex-grow: 1;
-  background: #fff;
-  border-radius: 3px;
-  border-bottom: 1px solid #6c757d;
-  overflow: auto;
+    display: block;
+    flex-grow: 1;
+    background: #fff;
+    border-radius: 3px;
+    border-bottom: 1px solid #6c757d;
+    overflow: auto;
 }
 
 .message-form-container {
-  display: flex;
-  flex-flow: row;
-  margin: 15px 5px;
-  margin-bottom: 5px;
+    display: flex;
+    flex-flow: row;
+    margin: 15px 5px;
+    margin-bottom: 5px;
 }
 
 .message-form-container .message-field {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .message-form-container .message-field input[type="text"] {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid #ff9696;
-  padding: 5px;
-  border-radius: 3px;
-  width: 100%;
-  font-size: 12pt;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ff9696;
+    padding: 5px;
+    border-radius: 3px;
+    width: 100%;
+    font-size: 12pt;
 }
 
 .message-form-container .message-form-action input[type="submit"] {
-  outline: none;
-  border: none;
-  border: 1px solid #007bff;
-  background: #007bff;
-  color: #fff;
-  font-size: 12pt;
-  display: block;
-  margin: auto;
-  margin-left: 15px;
-  padding: 5px;
-  font-weight: normal;
-  border-radius: 3px;
+    outline: none;
+    border: none;
+    border: 1px solid #007bff;
+    background: #007bff;
+    color: #fff;
+    font-size: 12pt;
+    display: block;
+    margin: auto;
+    margin-left: 15px;
+    padding: 5px;
+    font-weight: normal;
+    border-radius: 3px;
 }
 
 .athlete-row:nth-child(odd),
 .board-row:nth-child(odd),
-.events-row:nth-child(odd) {
-  background: #fff;
+.events-row:nth-child(odd),
+.gallery-row:nth-child(odd) {
+    background: #fff;
 }
 
 .athlete-row:nth-child(even),
 .board-row:nth-child(even),
-.events-row:nth-child(even) {
-  background: #fafafa;
+.events-row:nth-child(even),
+.gallery-row:nth-child(even) {
+    background: #fafafa;
 }
 
 .athlete-row,
 .board-row,
-.events-row {
-  display: flex;
-  flex-flow: row;
-  margin: 15px 0;
-  border-radius: 3px;
-  border: 1px solid #ddd;
-  padding: 10px 0;
+.events-row,
+.gallery-row {
+    display: flex;
+    flex-flow: row;
+    margin: 15px 0;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    padding: 10px 0;
 }
 
 .athlete-info,
 .board-info,
-.events-info {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
+.events-info,
+.gallery-info {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 
 .athlete-info .profile-image,
 .board-info .board-pp {
-  display: flex;
-  flex-flow: row;
-  margin: auto;
-  text-align: center;
-  font-size: 10pt;
+    display: flex;
+    flex-flow: row;
+    margin: auto;
+    text-align: center;
+    font-size: 10pt;
 }
 
 .athlete-info .profile-image p {
-  margin: 5px 0;
-  padding: 0;
+    margin: 5px 0;
+    padding: 0;
 }
 
 .athlete-info .profile-image img,
 .board-info .board-pp img {
-  display: block;
-  height: 150px;
-  width: 150px;
-  margin: auto 10px;
-  border-radius: 50%;
-  box-shadow: 0 0 12px #ccc;
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: auto 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #ccc;
 }
 
 .athlete-intro-cat,
 .board-intro,
-.event-intro {
-  margin: 0 10px;
-  padding: 10px;
-  width: 50%;
+.event-intro,
+.gallery-intro {
+    margin: 0 10px;
+    padding: 10px;
+    width: 50%;
 }
 
 .athlete-wrap p,
 .board-wrap p,
 .event-intro p {
-  margin: 0;
-  padding: 5px;
+    margin: 0;
+    padding: 5px;
 }
 
 .athlete-wrap p:first-child,
 .board-wrap p:first-child {
-  font-weight: 600;
-  font-size: 16pt;
+    font-weight: 600;
+    font-size: 16pt;
 }
 
 .athlete-wrap p:last-child,
 .board-wrap p:last-child {
-  color: #007bff;
-  font-weight: 600;
+    color: #007bff;
+    font-weight: 600;
 }
 
 .athlete-row-controls,
 .board-row-controls,
-.events-row-controls {
-  flex-grow: 1;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
+.events-row-controls,
+.gallery-row-controls {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 
 .remove {
-  align-self: center;
-  display: block;
-  margin: auto;
-  outline: none;
-  border: none;
-  color: #fff;
-  font-size: 13pt;
-  font-weight: 600;
-  padding: 10px;
-  background: #dc3545;
-  border-radius: 50px;
-  box-shadow: 3px 3px 12px #888;
+    align-self: center;
+    display: block;
+    margin: auto;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 13pt;
+    font-weight: 600;
+    padding: 10px;
+    background: #dc3545;
+    border-radius: 50px;
+    box-shadow: 3px 3px 12px #888;
 }
 
 .remove:hover {
-  cursor: pointer;
-  background: #c42f3e;
+    cursor: pointer;
+    background: #c42f3e;
 }
 
 .add-athletes {
-  width: 50%;
-  margin: auto;
-  background: #fff;
-  border-radius: 3px;
-  box-shadow: 0 0 12px #ccc;
+    width: 50%;
+    margin: auto;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 12px #ccc;
 }
 
 .add-athletes .form-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 #introduce {
-  grid-column: 1/3;
+    grid-column: 1/3;
 }
 
 #prime {
-  grid-column: 1/2;
+    grid-column: 1/2;
 }
 
 .add-bm,
-.add-events {
-  width: 50%;
-  margin: auto;
-  background: #fff;
-  border-radius: 3px;
-  box-shadow: 0 0 12px #ccc;
-  overflow: hidden;
+.add-events,
+.add-gallery {
+    width: 50%;
+    margin: auto;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 12px #ccc;
+    overflow: hidden;
 }
 
-.event-info img {
-  display: block;
-  height: 170px;
-  width: 250px;
-  border-radius: 3px;
-  overflow: hidden;
-  border: 1px solid #ddd;
-  margin: auto 15px;
+.event-info img,
+.gallery-img img {
+    display: block;
+    height: 170px;
+    width: 250px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    margin: auto 15px;
 }
 
 .event-intro p.title {
-  font-weight: 600;
-  font-size: 18pt;
-  color: #007bff;
+    font-weight: 600;
+    font-size: 18pt;
+    color: #007bff;
 }
 
 .event-intro p.description {
-  font-size: 14pt;
+    font-size: 14pt;
 }
 
 .event-intro p.timestamp {
-  font-size: 10pt;
+    font-size: 10pt;
 }
