@@ -2,6 +2,9 @@
     <div class="add-products">
         <form action="<?php echo $current_file; ?>" method="POST">
             <div class="form-container">
+                <div class="form-header">
+                    <h2>Products</h2>
+                </div>
                 <div class="input-field"><input type="text" name="title" placeholder="Product Title"></div>
                 <div class="input-field"><input type="text" name="price" placeholder="Product Price"></div>
                 <div class="input-field">

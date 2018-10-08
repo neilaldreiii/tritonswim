@@ -2,6 +2,9 @@
     <div class="add-bm">
         <form action="<?php echo $current_file; ?>" method="POST">
             <div class="form-container">
+                <div class="form-header">
+                    <h2>Board Members</h2>
+                </div>
                 <div class="input-field">
                     <input type="text" name="fullName" placeholder="Board Member Full Name">
                 </div>

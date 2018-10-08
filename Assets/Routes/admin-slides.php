@@ -2,6 +2,9 @@
     <div class="add-slides">
         <form action="<?php echo $current_file; ?>" method="POST">
             <div class="form-container">
+                <div class="form-header">
+                    <h2>Banner Slides</h2>
+                </div>
                 <div class="input-field">
                     <input type="file" name="slide">
                 </div>

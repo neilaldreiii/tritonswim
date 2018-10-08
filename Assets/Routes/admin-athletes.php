@@ -1,5 +1,8 @@
 <div class="admin-athletes">
     <div class="add-athletes">
+        <div class="form-header">
+            <h2>Athletes</h2>
+        </div>
         <form action="<?php echo $current_file; ?>" method="POST" enctype="multipart/form-data">
             <div class="form-container">
                 <div class="input-field">

@@ -2,6 +2,9 @@
     <div class="add-events">
         <form action="<?php echo $current_file; ?>" method="POST">
             <div class="form-container">
+                <div class="form-header">
+                    <h2>Events</h2>
+                </div>
                 <div class="input-field">
                     <input type="text" name="title" placeholder="Event Title" />
                 </div>

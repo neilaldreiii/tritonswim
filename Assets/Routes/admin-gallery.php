@@ -2,6 +2,9 @@
     <div class="add-gallery">
         <form action="<?php echo $current_file; ?>" method="POST">
             <div class="form-container">
+                <div class="form-header">
+                    <h2>Gallery</h2>
+                </div>
                 <div class="input-field">
                     <label for="">Image</label>
                     <input type="file" name="image">
