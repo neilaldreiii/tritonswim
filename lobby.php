@@ -91,7 +91,7 @@
 
                         while($row = mysqli_fetch_array($query_run)) {
 
-                            $id = $row['register_id'];
+                            $id = $row['id'];
                             $gender = $row['gender'];
                             $mo = $row['birthmonth'];
                             $day = $row['birthday'];

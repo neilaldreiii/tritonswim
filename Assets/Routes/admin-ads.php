@@ -67,12 +67,13 @@
         }
         ?>
     <div class="admin-ads-preview">
+    <div id="adStatus"></div>
     <?php 
-        $query = "SELECT * FROM `ads` ORDER BY `ads_id` DESC";
+        $query = "SELECT * FROM `ads` ORDER BY `id` DESC";
         if($query_run = mysqli_query($con, $query)) {
             while($row = mysqli_fetch_array($query_run)) {
 
-                $ads_ID = $row['ads_id'];
+                $ads_ID = $row['id'];
                 $ad = $row['ad'];
             ?>
                 <div class="ads-row">
@@ -82,7 +83,7 @@
                         </div>
                     </div>
                     <div class="ads-row-controls">
-                        <button class="remove" value="<?php echo $ads_ID; ?>" onclick="deleteAds(this);">Remove</button>
+                        <button class="remove" value="<?php echo $ads_ID; ?>" onclick="deleteField(this, 'ads', 'adStatus');">Remove</button>
                     </div>
                 </div>
             <?php

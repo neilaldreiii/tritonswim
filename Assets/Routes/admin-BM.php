@@ -77,13 +77,14 @@
 
     ?>
     <div class="admin-bm-preview">
+    <div id="bmStatus"></div>
         <?php
             $query = "SELECT * FROM `board` ORDER BY `position` DESC";
             if($query_run = mysqli_query($con, $query)) {
 
                 while($row = mysqli_fetch_array($query_run)) {
 
-                    $member_ID = $row['member_id'];
+                    $member_ID = $row['id'];
                     $fullname = $row['member_name'];
                     $position = $row['position'];
                     $pp = $row['member_img'];
@@ -102,7 +103,7 @@
                             </div>
                         </div>
                         <div class="board-row-controls">
-                            <button value="<?php echo $member_ID; ?>" onclick="deleteBM(this);" class="remove">Remove</button>
+                            <button value="<?php echo $member_ID; ?>" onclick="deleteField(this, 'board', 'bmStatus');" class="remove">Remove</button>
                         </div>
                     </div>
                 <?php

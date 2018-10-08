@@ -136,12 +136,13 @@
 
     ?>
     <div class="admin-athletes-preview">
+    <div id="athleteStatus"></div>
     <?php
         $query = "SELECT * FROM `athletes` ORDER BY `category` ASC";
         if($query_run = mysqli_query($con, $query)) {
             while($row = mysqli_fetch_array($query_run)) {
 
-                $athlete_ID = $row['athlete_ID'];
+                $athlete_ID = $row['id'];
                 $fullname = $row['fullname'];
                 $nickname = $row['nickname'];
                 $school = $row['school'];
@@ -173,7 +174,7 @@
                         </div>
                     </div>
                     <div class="athlete-row-controls">
-                        <button value="<?php echo $athlete_ID; ?>" onclick="deleteAthlete(this);" class="remove">Remove</button>
+                        <button value="<?php echo $athlete_ID; ?>" onclick="deleteField(this, 'athletes', 'athleteStatus');" class="remove">Remove</button>
                     </div>
                 </div>
             <?php

@@ -44,7 +44,7 @@
                     
                     if(isset($_POST['caption'])) {
                         
-                        echo $caption = $_POST['caption'];
+                        $caption = $_POST['caption'];
                         
                         if(!empty($caption)) {
                             $add = "INSERT INTO `slides` VALUES('', '$new_filename', '$caption')";
@@ -73,12 +73,13 @@
 
     ?>
     <div class="admin-slides-preview">
+    <div id="slideStatus"></div>
     <?php 
-        $query = "SELECT * FROM `slides` ORDER BY `slide_id` ASC";
+        $query = "SELECT * FROM `slides` ORDER BY `id` ASC";
         if($query_run = mysqli_query($con, $query)) {
             while($row = mysqli_fetch_array($query_run)) {
 
-                $slide_ID = $row['slide_id'];
+                $slide_ID = $row['id'];
                 $slide = $row['slide'];
                 $caption = $row['slide_caption'];
             ?>
@@ -92,7 +93,7 @@
                         <p class="title"><?php echo $caption; ?></p>
                     </div>
                     <div class="slide-row-controls">
-                        <button class="remove" value="<?php echo $slide_ID; ?>" onclick="deleteSlide(this);">Remove</button>
+                        <button class="remove" value="<?php echo $slide_ID; ?>" onclick="deleteField(this, 'slides', 'slideStatus');">Remove</button>
                     </div>
                 </div>
             <?php

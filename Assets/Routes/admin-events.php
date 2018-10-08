@@ -81,12 +81,13 @@
 
     ?>
     <div class="admin-events-preview">
+    <div id="eventStatus"></div>
     <?php
         $query = "SELECT * FROM `events` ORDER BY `postdate` DESC";
         if($query_run = mysqli_query($con, $query)) {
             
             while($row = mysqli_fetch_array($query_run)) {
-                $event_ID = $row['event_ID'];
+                $event_ID = $row['id'];
                 $title = $row['event_title'];
                 $descr = $row['event_description'];
                 $img = $row['event_image'];
@@ -104,7 +105,7 @@
                         <p class="timestamp"><?php echo $timestamp;  ?></p>
                     </div>
                     <div class="events-row-controls">
-                        <button value="<?php echo $event_ID; ?>" onclick="deleteEvent(this);" class="remove">Delete</button>
+                        <button value="<?php echo $event_ID; ?>" onclick="deleteField(this, 'events', 'eventStatus');" class="remove">Delete</button>
                     </div>
                 </div>
             <?php

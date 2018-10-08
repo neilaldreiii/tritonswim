@@ -168,7 +168,7 @@ function deleteField(id, field, message) {
      }
      
      parameters = 'id='+id.value +
-     '&field='+document.getElementById(field).value;
+     '&field='+field;
  
      xmlhttp.open('POST', 'ajaxfile.php', true);
      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');

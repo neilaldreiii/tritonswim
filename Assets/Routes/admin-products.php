@@ -78,12 +78,13 @@
     }
     ?>
     <div class="admin-products-preview">
+    <div id="productStatus"></div>
     <?php 
-        $query = "SELECT * FROM `products` ORDER BY `product_id` DESC";
+        $query = "SELECT * FROM `products` ORDER BY `id` DESC";
         if($query_run = mysqli_query($con, $query)) {
             while($row = mysqli_fetch_array($query_run)) {
 
-                $product_ID = $row['product_id'];
+                $product_ID = $row['id'];
                 $image = $row['product_image'];
                 $title = $row['product_title'];
                 $price = $row['product_price'];
@@ -99,7 +100,7 @@
                         <p class="price"><?php echo $price; ?></p>
                     </div>
                     <div class="product-row-controls">
-                        <button class="remove" value="<?php echo $product_ID; ?>" onclick="deleteProduct(this);">Remove</button>
+                        <button class="remove" value="<?php echo $product_ID; ?>" onclick="deleteField(this, 'products', 'productStatus');">Remove</button>
                     </div>
                 </div>
             <?php

@@ -6,7 +6,7 @@ if(isset($_POST['maximize'])) {
     $galleryImg = $_POST['maximize'];
     if(!empty($galleryImg)) {
         
-        $maximize = "SELECT * FROM `gallery` WHERE `image_ID`='$galleryImg'";
+        $maximize = "SELECT * FROM `gallery` WHERE `id`='$galleryImg'";
         if($max_run = mysqli_query($con, $maximize)) {
             
             $img_row = mysqli_fetch_array($max_run);
@@ -36,7 +36,7 @@ if(isset($_POST['athlete'])) {
     
     if(!empty($athlete_id)) {
         
-        $retrieve_athlete = "SELECT * FROM `athletes` WHERE `athlete_ID` ='$athlete_id'";
+        $retrieve_athlete = "SELECT * FROM `athletes` WHERE `id` ='$athlete_id'";
         if($ra_query = mysqli_query($con, $retrieve_athlete)) {
             
             while($ra_row = mysqli_fetch_array($ra_query)){
@@ -87,7 +87,7 @@ if(isset($_POST['showProduct'])) {
     $product_id = $_POST['showProduct'];
     
     if(!empty($product_id)) {
-        $product_query = "SELECT * FROM `products` WHERE `product_id`='$product_id'";
+        $product_query = "SELECT * FROM `products` WHERE `id`='$product_id'";
         if($pq_run = mysqli_query($con, $product_query)) {
             
             while($pq_row = mysqli_fetch_array($pq_run)) {
@@ -196,7 +196,22 @@ if(isset($_POST['generate'])) {
     }
 }
 
+if(isset($_POST['id']) && isset($_POST['field'])) {
+    $id = $_POST['id'];
+    $field = $_POST['field'];
 
+    if(!empty($id)) {
+
+        $query = "DELETE FROM `$field` WHERE `$field`.`id` = $id";
+        if($query = mysqli_query($con, $query)) {
+            
+            echo '<meta http-equiv="refresh" content="1">';
+        }
+
+    } else {
+        echo 'Empty Bananas';
+    }
+}
 
 
 ?>

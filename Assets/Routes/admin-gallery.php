@@ -60,12 +60,13 @@
     }
     ?>
     <div class="admin-gallery-preview">
+    <div id="galleryStatus"></div>
     <?php
-        $query = "SELECT * FROM `gallery` ORDER BY `image_ID` DESC";
+        $query = "SELECT * FROM `gallery` ORDER BY `id` DESC";
         if($query_run = mysqli_query($con, $query)) {
             while($row = mysqli_fetch_array($query_run)) {
                 
-                $image_ID = $row['image_ID'];
+                $image_ID = $row['id'];
                 $image = $row['image'];
                 $caption = $row['image_caption'];
             ?>
@@ -77,7 +78,7 @@
                         </div>
                     </div>
                     <div class="gallery-row-controls">
-                        <button value="<?php echo $image_ID; ?>" onclick="deleteImg(this);" class="remove">Remove</button>
+                        <button value="<?php echo $image_ID; ?>" onclick="deleteField(this, 'gallery', 'galleryStatus');" class="remove">Remove</button>
                     </div>
                 </div>
             <?php
