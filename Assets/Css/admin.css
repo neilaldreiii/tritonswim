@@ -305,6 +305,7 @@ a.logout {
     border-radius: 3px;
     box-shadow: 0 0 12px #ccc;
     overflow: hidden;
+    margin: 10px 0;
 }
 
 .message-preview {
@@ -381,7 +382,7 @@ a.logout {
 .ads-row {
     display: flex;
     flex-flow: row;
-    margin: 15px 0;
+    margin: 20px 0;
     border-radius: 3px;
     border: 1px solid #ddd;
     padding: 10px 0;
@@ -552,4 +553,50 @@ a.logout {
 
 .event-intro p.timestamp {
     font-size: 10pt;
+}
+#keyDisplay {
+    width: 300px;
+    text-align: center;
+}
+#codeignite {
+    outline: none;
+    border: none;
+    background: #17a2b8;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    display: block;
+    font-size: 13pt;
+    margin: 15px auto;
+}
+#codeignite:hover {
+    cursor: pointer;
+    background: #158da0;
+}
+.admin-controls {
+    width: 50%;
+}
+.application-lists {
+    display: flex;
+    flex-flow: column;
+    height: 650px;
+    overflow-x: auto;
+    padding: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+.app-row {
+    padding: 15px;
+    border-radius: 3px;
+    margin: 10px 0;
+    margin-bottom: 25px;
+    box-shadow: 0 0 8px #ccc;
+}
+.app-row:nth-child(even) {
+    background: #FFF;
+    border-radius: 3px;
+}
+.app-row:nth-child(odd) {
+    border-radius: 3px;
+    background: #fcfcfc;
 }

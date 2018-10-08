@@ -1,35 +1,6 @@
 <?php
 require 'Assets/Include/connect.inc.php';
 
-if(isset($_POST['remove'])) {
-    $id = $_POST['remove'];
-    
-    if(!empty($id)) {
-        
-        $delete = "DELETE FROM `athletes` WHERE `athletes`.`athlete_ID` ='".mysqli_real_escape_string($con, $id)."'";
-        if($delete_query = mysqli_query($con, $delete)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
-
-if(isset($_POST['deleteimg'])) {
-    $imgid = $_POST['deleteimg'];
-    
-    if(!empty($imgid)) {
-        
-        $deleteimg = "DELETE FROM `gallery` WHERE `gallery`.`image_ID` ='".mysqli_real_escape_string($con, $imgid)."'";
-        
-        if($deleteimg_query = mysqli_query($con, $deleteimg)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
-
 if(isset($_POST['maximize'])) {
     
     $galleryImg = $_POST['maximize'];
@@ -109,99 +80,6 @@ if(isset($_POST['athlete'])) {
             }
         }
     }
-}
-
-if(isset($_POST['removeproduct'])) {
-    
-    $product_id = $_POST['removeproduct'];
-    
-    if(!empty($product_id)) {
-        
-        $dltprod = "DELETE FROM `products` WHERE `products`.`product_id` = $product_id";
-        if($dltprod_qry = mysqli_query($con, $dltprod)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
-
-if(isset($_POST['removebm'])) {
-    
-    $bm_id = $_POST['removebm'];
-    
-    if(!empty($bm_id)) {
-        
-        $dltbm = "DELETE FROM `board` WHERE `board`.`member_id` = $bm_id";
-        if($dltbm_qry = mysqli_query($con, $dltbm)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
-
-
-if(isset($_POST['removead'])) {
-    
-    $ad_id = $_POST['removead'];
-    
-    if(!empty($ad_id)) {
-        
-        $dltad = "DELETE FROM `ads` WHERE `ads`.`ads_id` = $ad_id";
-        if($dltad_qry = mysqli_query($con, $dltad)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
-
-if(isset($_POST['removeevent'])) {
-    
-    $event_id = $_POST['removeevent'];
-    
-    if(!empty($event_id)) {
-        
-        $dltevent = "DELETE FROM `events` WHERE `events`.`event_ID` = $event_id";
-        if($dltevent_qry = mysqli_query($con, $dltevent)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
-
-if(isset($_POST['removereg'])) {
-    
-    $reg_id = $_POST['removereg'];
-    
-    if(!empty($reg_id)) {
-        
-        $dltreg = "DELETE FROM `registration` WHERE `registration`.`register_id` = $reg_id";
-        if($dltreg_qry = mysqli_query($con, $dltreg)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
-
-if(isset($_POST['removeslide'])) {
-    
-    $slide_id = $_POST['removeslide'];
-    
-    if(!empty($slide_id)) {
-        
-        $dltslide = "DELETE FROM `slides` WHERE `slides`.`slide_id` ='$slide_id'";
-        if($dltslidequery = mysqli_query($con, $dltslide)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-        
-    }
-    
 }
 
 if(isset($_POST['showProduct'])) {
@@ -313,9 +191,12 @@ if(isset($_POST['generate'])) {
         $generated = date("mdy").'-'.imagefilename(6);
         $add = "INSERT INTO `verify` VALUES('', '".mysqli_real_escape_string($con, $generated)."', 'new')";
         if($add_query = mysqli_query($con, $add)) {
-            echo '<p class="keyCodes">Verification Code: <b>'.$generated.'</b></p>';
+            echo '<p class="keyCodes"><b>Verification Code:</b> '.$generated.'</p>';
         }
     }
 }
+
+
+
 
 ?>
