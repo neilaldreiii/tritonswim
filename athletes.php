@@ -1,10 +1,7 @@
 <?php 
-
 require_once 'Assets/Include/core.inc.php';
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +36,7 @@ require_once 'Assets/Include/core.inc.php';
                 
                 while($row = mysqli_fetch_array($query_run)) {
                     
-                    $athleteID = $row['athlete_ID'];
+                    $athleteID = $row['id'];
                     $nickname = ucwords($row['nickname']);
                     $dp = $row['athlete_profile_image'];
                     $cat = $row['category'];

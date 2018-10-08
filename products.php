@@ -34,7 +34,7 @@ require_once 'Assets/Include/core.inc.php';
             if($query_run = mysqli_query($con, $query)) {
                 while($row = mysqli_fetch_array($query_run)) {
 
-                    $product_id = $row['product_id'];
+                    $product_id = $row['id'];
                     $product_img = $row['product_image'];
                     $product_title = $row['product_title'];
                     $product_price = $row['product_price'];

@@ -38,7 +38,7 @@ require_once 'Assets/Include/connect.inc.php';
         <div class="triton-slideshow">
             
             <?php
-            $query = "SELECT * FROM `slides` ORDER BY `slide_id`";
+            $query = "SELECT * FROM `slides` ORDER BY `id`";
             if($query_run = mysqli_query($con, $query)) {
 
                 while($row = mysqli_fetch_array($query_run)) {
