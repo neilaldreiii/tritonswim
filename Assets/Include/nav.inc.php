@@ -18,7 +18,7 @@ require_once 'connect.inc.php';
             </span>
             <div class="nav-links" id="navigation-links">
                 <a href="index.php">Home</a>
-
+                <a href="triton.php">Triton Members</a>
                 <div class="dropdown">
                     <span class="dropdown-btn" id="dropbtnEvents">Events <span class="icon"><i class="fas fa-caret-down"></i></span></span>
                     <div class="dropdown-content" id="dropdownEvents"> 
@@ -35,7 +35,6 @@ require_once 'connect.inc.php';
                         <a href="athletes.php">Athletes</a>
                     </div>
                 </div>
-
                 <a href="guidelines.php">Guidelines</a>
                 <a href="register.php">Registration</a>
                 <a href="policy.php">Policies</a>
