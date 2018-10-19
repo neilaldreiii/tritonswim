@@ -129,6 +129,8 @@
 }
 .triton-brand .triton-social {
    margin: 5px;
+   display: flex;
+   flex-flow: row;
 }
 .triton-brand .triton-social a {
     color: #fff;

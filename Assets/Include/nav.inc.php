@@ -46,8 +46,8 @@ require_once 'connect.inc.php';
                     </a>
                 </div>
                 <div class="triton-social">
-                    <span class="pri-icon"><i class="fas fa-sign-in-alt"></i></span>
-                    <a href="triton.php">Triton Members</a>
+                    <span class="pri-icon"><i class="fas fa-lock"></i></span>
+                    <a href="triton.php">Triton Member Login</a>
                 </div>
             </div>
         </div>
