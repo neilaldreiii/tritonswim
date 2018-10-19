@@ -24,6 +24,7 @@
     <div class="container">
         <header class="header">
             <h1>Triton Swimclub Members</h1>
+            <h2><a href="index.php">Triton Swimclub Main Page</a></h2>
         </header>
         <div class="sub-container">
             <div class="register-container">

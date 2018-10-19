@@ -81,47 +81,7 @@ if(isset($_POST['athlete'])) {
         }
     }
 }
-
-if(isset($_POST['showProduct'])) {
-    
-    $product_id = $_POST['showProduct'];
-    
-    if(!empty($product_id)) {
-        $product_query = "SELECT * FROM `products` WHERE `id`='$product_id'";
-        if($pq_run = mysqli_query($con, $product_query)) {
-            
-            while($pq_row = mysqli_fetch_array($pq_run)) {
-                
-                $product_img = $pq_row['product_image'];
-                $product_title = $pq_row['product_title'];
-                $product_price = $pq_row['product_price'];
-                ?>
-                
-                <div class="display-product-container">
-                    <div class="product-image"><img src="Assets/Media/Uploads/<?php echo $product_img; ?>" alt=""></div>
-                    <div class="product-caption">
-                        <h1><?php echo $product_title; ?></h1>
-                        <p><?php echo "&#8369; ".$product_price; ?></p>
-                        <div class="product-contacts">
-                            <h1>For orders and inquiry text/email/call us</h1>
-                            <h3><i>Complete name + Product name + size &amp; send to:</i></h3>
-                            <p>09055201970 - Jopet Castañeda</p>
-                            <p>or</p>
-                            <p>tritonclub2017@gmail.com</p>
-                            <p>or</p>
-                            <p>Facebook: <a href="https://www.facebook.com/tritonswimclub/">Triton Swim Club</a></p>
-                        </div>
-                    </div>
-                </div>
-                
-                <?php
-            }
-        }
-    }
-    
-}
 ?>
-
 <?php 
 
     if(isset($_POST['reg_username']) 
@@ -214,4 +174,74 @@ if(isset($_POST['id']) && isset($_POST['field'])) {
 }
 
 
+?>
+
+<?php 
+
+    if(isset($_POST['pro_fname']) 
+    && isset($_POST['pro_add']) 
+    && isset($_POST['pro_size']) 
+    && isset($_POST['productID'])) {
+
+        $or_fname = $_POST['pro_fname'];
+        $or_add = $_POST['pro_add'];
+        $or_size = $_POST['pro_size'];
+        $or_id = $_POST['productID'];
+
+        echo 'set';
+
+        if(!empty($or_fname)
+        && !empty($or_add)
+        && !empty($or_size)
+        && !empty($or_id)) {
+            
+            echo ' not empty';
+
+            $products = "SELECT * FROM `products` WHERE `id`='$or_id'";
+            $product_query = mysqli_query($con, $products);
+            $product = mysqli_fetch_assoc($product_query);
+            
+            $product_name = mysqli_real_escape_string($con, $product['product_title']);
+            $product_img = $product['product_image'];
+            $product_price = $product['product_price'];
+
+            echo $product_name.' '.$product_img.' '.$product_price;
+
+            $add_order = "INSERT INTO `users_order` VALUES ('', '$or_fname', '$or_add', '$or_size', '$or_id', '$product_name', '$product_price', Now())";
+
+            if($add_order_query = mysqli_query($con, $add_order)) {
+
+                echo 'Fuck yea';
+
+            } else {
+                echo 'banana';
+            }
+        }
+    }
+?>
+
+<?php 
+
+if(isset($_POST['message'])) {
+
+    $message = mysqli_real_escape_string($con, $_POST['message']);
+
+    if(!empty($message)) {
+
+        require_once 'Assets/Include/core.inc.php';
+        $sender = getuserfield('id');
+        $add_message = "INSERT INTO `messages` VALUES('', '$message', '$sender', Now())";
+
+        if($add_message_query = mysqli_query($con, $add_message)) {
+        } else {
+
+            echo '<p>Connection Failed</p>';
+
+        }
+    } else {
+
+        echo '<p>Cannot send an empty message</p>';
+
+    }
+}
 ?>

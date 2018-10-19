@@ -108,10 +108,6 @@ h6 {
 }
 
 .lobby-navigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     width: 100%;
     background: #fff;
     box-shadow: 0 0 12px #ccc;
@@ -119,28 +115,82 @@ h6 {
 
 .lobby-navigation .lobby-navigation-wrap {
     padding: 10px;
-    width: 80%;
+    width: 100%;
     margin: auto;
     display: flex;
-    flex-flow: row;
-    justify-content: space-between;
+    flex-flow: column;
 }
 
 .lobby-profile {
     display: flex;
     flex-flow: row;
+    margin: 10px 0;
 }
 
 .lobby-profile .lobby-avatar-container {
     border: 1px solid;
-    height: 75px;
-    width: 75px;
+    height: 125px;
+    width: 125px;
     border-radius: 50%;
-    margin: 0 10px;
+    overflow: hidden;
 }
 
+.lobby-main-avatar {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.lobby-main-avatar img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.lobby-main-avatar:hover .update-avatar {
+    opacity: 1;
+}
+.update-avatar {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    transition: opacity 0.5s;
+}
+.update-avatar form {
+    height: 100%;
+    width: 100%;
+}
+.avatar-update-btn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.update-avatar label {
+    color: #fafafa;
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: background 0.5s, color 0.5s, border 0.5s;
+}
+.update-avatar label:hover {
+    color: #FFF;
+    font-weight: 600;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #fff;
+}
+.update-avatar input[type=file] {
+    display: none;
+}
 .lobby-profile .lobby-profile-name {
-    margin: auto;
+    margin: auto 10px;
 }
 
 .lobby-profile .lobby-profile-name p {
@@ -148,37 +198,92 @@ h6 {
     padding: 0;
 }
 
+.lobby-messaging, .lobby-logout {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.lobby-logout {
+    margin: auto;
+    margin-right: 5px;
+}
+.lobby-messaging button {
+    outline: none;
+    border: none;
+    background: #0084FF;;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 5px;
+    color: #fff !important;
+    text-align: center;
+    font-size: 13pt;
+    transition: all 0.5s;
+}
+
+.lobby-messaging button:hover {
+    background: rgb(3, 123, 235);
+    cursor: pointer;
+}
+
 a.logout {
     text-decoration: none;
     background: #343434;
     border-radius: 3px;
-    display: block;
-    margin: auto;
-    margin-left: 30px;
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 5px;
     color: #fff !important;
     text-align: center;
+    font-size: 12pt;
 }
 
 .lobby-controls {
     display: flex;
     flex-flow: column;
-    justify-content: center;
 }
 
 .lobby-controls ul {
-    display: flex;
-    flex-flow: row;
-    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 20px;
+    margin: 10px 0;
     padding: 0;
     list-style-type: none;
 }
 
-.lobby-controls ul li a {
+.lobby-controls a.non-admin {
     display: block;
     padding: 10px;
+    text-align: left;
+    text-decoration: none;
+    color: #444;
+    margin: 5px 0;
+}
+.lobby-controls a.non-admin:hover {
+    background: #f3f3f3;
+}
+.lobby-controls ul li{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.lobby-controls ul li a {
+    border-radius: 3px;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
     color: #444;
+    font-size: 17pt;
+    border: 1px solid #ddd;
+}
+
+.lobby-controls ul li a:hover {
+    background: #f3f3f3;
 }
 
 .container .header {
@@ -294,29 +399,132 @@ a.logout {
 .lobby {
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
 }
 
 .message-board {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    display: none;
+}
+.message-container {
     display: flex;
     flex-flow: column;
-    height: 525px;
-    width: 475px;
+    height: auto;
+    width: 825px;
+    justify-content: center;
     border-radius: 3px;
-    box-shadow: 0 0 12px #ccc;
     overflow: hidden;
-    margin: 10px 0;
+    margin: 10px auto;
 }
-
+.closer {
+    margin: auto;
+    padding: 20px 10px;
+}
+.closer button {
+    border: none;
+    outline: none;
+    color: #FFF;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    font-size: 16pt;
+    background: #d9534f;
+    transition: all 0.5s;
+    
+}
+.closer button:hover {
+    cursor: pointer;
+    background:#dc3545;
+}
 .message-preview {
     display: block;
-    flex-grow: 1;
+    height: 725px;
+    width: 100%;
+    margin: auto;
     background: #fff;
     border-radius: 3px;
     border-bottom: 1px solid #6c757d;
-    overflow: auto;
+    overflow-Y: auto;
+    overflow-x: hidden;
 }
 
+.sender-row {
+    display: flex;
+    flex-flow: row;
+    padding: 10px;
+}
+
+.current-user {
+    flex-flow: row-reverse;
+}
+
+.current-user .sender-info .sender-avatar img, .other-user .sender-info .sender-avatar img{
+    border-radius: 50%;
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+.sender-name {
+    font-size: 12pt;
+    color: #6c757d;
+}
+.sender-name p {
+    text-align: right;
+    margin: 0 10px;
+    padding: 0;
+}
+.current-user .message p{
+    display: inline-block;
+    background: #17a2b8;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 3px 10px;
+    color: #FFF;
+}
+.message {
+    margin: auto;
+    margin-bottom: 0;
+}
+.message-info {
+    display: flex;
+    flex-flow: column;
+}
+.other-user .message p {
+    background: #e9ebee;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 3px 10px;
+    color: #444;
+}
+.current-user .message span {
+    display: block;
+    font-size: 10pt;
+    color: #888;
+    margin: auto;
+    text-align: right;  
+    padding: 0;
+}
+.other-user .message span {
+    display: block;
+    font-size: 10pt;
+    color: #888;
+    margin: auto;
+    text-align: left;  
+    padding: 0;
+}
+.message-actions {
+    background: #e9ebee;
+    border-radius: 3px;
+    margin: 5px 0;
+}
 .message-form-container {
     display: flex;
     flex-flow: row;
@@ -352,12 +560,18 @@ a.logout {
     font-weight: normal;
     border-radius: 3px;
 }
-
+.admin-controls {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+}
 .athlete-row:nth-child(odd),
 .board-row:nth-child(odd),
 .events-row:nth-child(odd),
 .gallery-row:nth-child(odd),
 .product-row:nth-child(odd),
+.order-row:nth-child(odd),
 .slide-row:nth-child(odd),
 .ads-row:nth-child(odd) {
     background: #fff;
@@ -368,6 +582,7 @@ a.logout {
 .events-row:nth-child(even),
 .gallery-row:nth-child(even),
 .product-row:nth-child(even),
+.order-row:nth-child(even),
 .slide-row:nth-child(even),
 .ads-row:nth-child(even) {
     background: #fafafa;
@@ -378,6 +593,7 @@ a.logout {
 .events-row,
 .gallery-row,
 .product-row,
+.order-row,
 .slide-row,
 .ads-row {
     display: flex;
@@ -393,6 +609,7 @@ a.logout {
 .events-info,
 .gallery-info,
 .product-info,
+.order-info,
 .slide-info,
 .ads-info {
     display: flex;
@@ -429,6 +646,7 @@ a.logout {
 .event-intro,
 .gallery-intro,
 .product-intro,
+.order-intro,
 .slide-intro {
     margin: 0 10px;
     padding: 10px;
@@ -438,7 +656,8 @@ a.logout {
 .athlete-wrap p,
 .board-wrap p,
 .event-intro p,
-.slide-intro p {
+.slide-intro p,
+.order-intro p {
     margin: 0;
     padding: 5px;
 }
@@ -460,6 +679,7 @@ a.logout {
 .events-row-controls,
 .gallery-row-controls,
 .product-row-controls,
+.order-row-controls,
 .slide-row-controls,
 .ads-row-controls {
     flex-grow: 1;
@@ -526,6 +746,7 @@ a.logout {
 .event-info img,
 .gallery-img img,
 .product-info img,
+.order-info img,
 .slide-info img,
 .ads-info img {
     display: block;
@@ -539,6 +760,7 @@ a.logout {
 
 .event-intro p.title,
 .product-intro p.title,
+.order-intro p.title,
 .slide-intro p.title {
     font-weight: 600;
     font-size: 18pt;
@@ -547,11 +769,12 @@ a.logout {
 
 .event-intro p.description,
 .product-intro p.price,
-.slide-intro p.caption {
+.slide-intro p.caption,
+.order-intro p.price {
     font-size: 14pt;
 }
 
-.event-intro p.timestamp {
+.event-intro p.timestamp, .order-intro p.timestamp {
     font-size: 10pt;
 }
 #keyDisplay {
@@ -572,9 +795,6 @@ a.logout {
 #codeignite:hover {
     cursor: pointer;
     background: #158da0;
-}
-.admin-controls {
-    width: 50%;
 }
 .application-lists {
     display: flex;
@@ -599,4 +819,13 @@ a.logout {
 .app-row:nth-child(odd) {
     border-radius: 3px;
     background: #fcfcfc;
+}
+.back-btn {
+    text-decoration: none;
+    display: inline-block;
+    background: #6c757d;
+    margin: 20px 0;
+    color: #FFF;
+    border-radius: 3px;
+    padding: 10px 15px;
 }

@@ -78,7 +78,10 @@
     }
     ?>
     <div class="admin-products-preview">
-    <div id="productStatus"></div>
+        <div id="productStatus"></div>
+        <header class="header">
+            <h1>Products</h1>
+        </header>
     <?php 
         $query = "SELECT * FROM `products` ORDER BY `id` DESC";
         if($query_run = mysqli_query($con, $query)) {
@@ -107,5 +110,54 @@
             }
         }
     ?>
+    </div>
+    <div class="admin-orders">
+        <div id="orderStatus"></div>
+        <header class="header">
+            <h1>Orders</h1>
+        </header>
+        <?php 
+            $orders = "SELECT * FROM `users_order` ORDER BY `id` DESC";
+            if($order_query = mysqli_query($con, $orders)) {
+                while($order_row = mysqli_fetch_array($order_query)) {
+                    
+                    $orderID = $order_row['id'];
+                    $fname = $order_row['fullname'];
+                    $address = $order_row['address'];
+                    $size = $order_row['size'];
+                    $productID = $order_row['productID'];
+                    $product = $order_row['product'];
+                    $pro_price = $order_row['price'];
+                    $order_stamp = strtotime($order_row['stamp']);
+                    $timestamp  = date("M / d D / Y H:i A", $order_stamp);
+
+                    $product_img = "SELECT `product_image` from `products` WHERE `id`='$productID'";
+                    if($pimg_query = mysqli_query($con, $product_img)) {
+                        $pi_row = mysqli_fetch_array($pimg_query);
+                        $primg = $pi_row['product_image'];
+                    }
+                ?>
+                    <div class="order-row">
+                        <div class="order-info">
+                            <div class="order-image">
+                                <img src="Assets/Media/Uploads/<?php echo $primg; ?>" alt="" />
+                            </div>
+                        </div>
+                        <div class="order-intro">
+                            <p class="title"><?php echo $product; ?></p>
+                            <p class="price"><?php echo $pro_price; ?></p>
+                            <p><?php echo $fname; ?></p>
+                            <p><?php echo $address; ?></p>
+                            <p><?php echo $size; ?></p>
+                            <p class="timestamp"><?php echo $timestamp; ?></p>
+                        </div>
+                        <div class="order-row-controls">
+                            <button class="remove" value="<?php echo $orderID; ?>" onclick="deleteField(this, 'users_order', 'orderStatus');">Remove</button>
+                        </div>
+                    </div>
+                <?php
+                }
+            }
+        ?>
     </div>
 </div>

@@ -59,39 +59,6 @@ function viewAthlete(athlete) {
     
 }
 
-function productContacts() {
-    $("#productOverlay").css("display", "flex");
-}
-function showProduct(productmax) {
-    
-    $('#productsDisplay').css("display", "block");
-    
-    if (window.XMLHttpRequest) {
-	
-	   xmlhttp = new XMLHttpRequest();
-
-    } else {
-    
-        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-    }
-
-    xmlhttp.onreadystatechange = function() {
-
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            
-            document.getElementById('mainproduct').innerHTML = xmlhttp.responseText;
-            
-        }
-    }
-    
-    parameters = 'showProduct='+productmax.value;
-
-    xmlhttp.open('POST', 'ajaxfile.php', true);
-    xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-    xmlhttp.send(parameters);
-    
-}
-
 function register() {
     if (window.XMLHttpRequest) {
 	
@@ -173,4 +140,94 @@ function deleteField(id, field, message) {
      xmlhttp.open('POST', 'ajaxfile.php', true);
      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
      xmlhttp.send(parameters);
+}
+
+function order(id,fname, add, sz) {
+
+    if (window.XMLHttpRequest) {
+	
+        xmlhttp = new XMLHttpRequest();
+ 
+     } else {
+     
+         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+     }
+ 
+     xmlhttp.onreadystatechange = function() {
+ 
+         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+             
+             document.getElementById('productOrderPreview').innerHTML = xmlhttp.responseText;
+             
+         }
+     }
+     
+     parameters = 'pro_fname='+document.getElementById(fname).value
+     +'&pro_add='+document.getElementById(add).value
+     +'&pro_size='+document.getElementById(sz).value
+     +'&productID='+id.value;
+ 
+     xmlhttp.open('POST', 'ajaxfile.php', true);
+     xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+     xmlhttp.send(parameters);
+}
+
+function sendMessage() {
+
+    if (window.XMLHttpRequest) {
+	
+        xmlhttp = new XMLHttpRequest();
+ 
+     } else {
+     
+         xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+     }
+ 
+     xmlhttp.onreadystatechange = function() {
+ 
+         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+             
+             document.getElementById('messagePreview').innerHTML = xmlhttp.responseText;
+             
+         }
+     }
+     
+     parameters = 'message='+document.getElementById('message').value;
+ 
+     xmlhttp.open('POST', 'ajaxfile.php', true);
+     xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+     xmlhttp.send(parameters);
+     document.getElementById('message').value = '';
+}
+
+function updateMessage() {
+    
+    if (window.XMLHttpRequest) {
+	
+	   xmlhttp = new XMLHttpRequest();
+
+    } else {
+    
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+
+    xmlhttp.onreadystatechange = function() {
+
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            
+            document.getElementById('messagePreview').innerHTML = xmlhttp.responseText;
+            
+        }
+    }
+
+    xmlhttp.open('GET', 'updatemessage.php' , true);
+    xmlhttp.send();
+}
+
+setInterval(function() {updateMessage()}, 200);
+
+function scrollToBottom() {
+
+    var log = $('#messagePreview');
+    log.animate({ scrollTop: log.prop('scrollHeight')}, 0);
 }
