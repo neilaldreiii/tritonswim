@@ -84,58 +84,58 @@ if(isset($_POST['athlete'])) {
 ?>
 <?php 
 
-    if(isset($_POST['reg_username']) 
-    && isset($_POST['reg_password'])
-    && isset($_POST['reg_code'])
-    && isset($_POST['reg_fname'])
-    && isset($_POST['reg_lname'])) {
+    // if(isset($_POST['reg_username']) 
+    // && isset($_POST['reg_password'])
+    // && isset($_POST['reg_code'])
+    // && isset($_POST['reg_fname'])
+    // && isset($_POST['reg_lname'])) {
 
-        $username = $_POST['reg_username'];
-        $password =$_POST['reg_password'];
-        $code = $_POST['reg_code'];
-        $fname = $_POST['reg_fname'];
-        $lname = $_POST['reg_lname'];
+    //     $username = $_POST['reg_username'];
+    //     $password =$_POST['reg_password'];
+    //     $code = $_POST['reg_code'];
+    //     $fname = $_POST['reg_fname'];
+    //     $lname = $_POST['reg_lname'];
 
-        $password_hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 10));
+    //     $password_hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 10));
 
-        if(!empty($username)
-        && !empty($password)
-        && !empty($code)
-        && !empty($fname)
-        && !empty($lname)) {
+    //     if(!empty($username)
+    //     && !empty($password)
+    //     && !empty($code)
+    //     && !empty($fname)
+    //     && !empty($lname)) {
 
-            $use_code = "SELECT * FROM `verify` WHERE `veri_code`='$code'";
-            if($use_code_query = mysqli_query($con, $use_code)) {
+    //         $use_code = "SELECT * FROM `verify` WHERE `veri_code`='$code'";
+    //         if($use_code_query = mysqli_query($con, $use_code)) {
 
-                $code_row = mysqli_fetch_array($use_code_query);
-                $code_id = $code_row['id'];
-                $update_code = "UPDATE `verify` SET `status`='in-use' WHERE `verify`.`id` = '$code_id'";
+    //             $code_row = mysqli_fetch_array($use_code_query);
+    //             $code_id = $code_row['id'];
+    //             $update_code = "UPDATE `verify` SET `status`='in-use' WHERE `verify`.`id` = '$code_id'";
 
-                if($update_code_query = mysqli_query($con, $update_code)) {
+    //             if($update_code_query = mysqli_query($con, $update_code)) {
                     
-                    $availability = "SELECT * FROM `admin` WHERE `username`='$username'";
-                    if($availability_query = mysqli_query($con, $availability)) {
+    //                 $availability = "SELECT * FROM `admin` WHERE `username`='$username'";
+    //                 if($availability_query = mysqli_query($con, $availability)) {
 
-                        $num_rows = mysqli_num_rows($availability_query);
+    //                     $num_rows = mysqli_num_rows($availability_query);
 
-                        if($num_rows == 1) {
+    //                     if($num_rows == 1) {
 
-                            echo '<p class="error">Username is already in use.</p>';
+    //                         echo '<p class="error">Username is already in use.</p>';
 
-                        } elseif($num_rows == 0) {
+    //                     } elseif($num_rows == 0) {
                             
-                            $add = "INSERT INTO `admin` VALUES('','".mysqli_real_escape_string($con, $username)."', '".mysqli_real_escape_string($con, $password_hash)."', '".mysqli_real_escape_string($con, $fname)."', '".mysqli_real_escape_string($con, $lname)."',
-                            'avatar_null')";
+    //                         $add = "INSERT INTO `admin` VALUES('','".mysqli_real_escape_string($con, $username)."', '".mysqli_real_escape_string($con, $password_hash)."', '".mysqli_real_escape_string($con, $fname)."', '".mysqli_real_escape_string($con, $lname)."',
+    //                         'avatar_null')";
 
-                            if($add_query = mysqli_query($con, $add)) {
-                                echo '<p>Registration Successfull. <a href="triton.php">Sign In</a></p>';
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+    //                         if($add_query = mysqli_query($con, $add)) {
+    //                             echo '<p>Registration Successfull. <a href="triton.php">Sign In</a></p>';
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
 ?>
 
@@ -181,22 +181,21 @@ if(isset($_POST['id']) && isset($_POST['field'])) {
     if(isset($_POST['pro_fname']) 
     && isset($_POST['pro_add']) 
     && isset($_POST['pro_size']) 
-    && isset($_POST['productID'])) {
+    && isset($_POST['productID'])
+    && isset($_POST['pro_number'])) {
 
         $or_fname = $_POST['pro_fname'];
         $or_add = $_POST['pro_add'];
         $or_size = $_POST['pro_size'];
         $or_id = $_POST['productID'];
-
-        echo 'set';
+        $or_number = $_POST['pro_number'];
 
         if(!empty($or_fname)
         && !empty($or_add)
         && !empty($or_size)
-        && !empty($or_id)) {
+        && !empty($or_id)
+        && !empty($or_number)) {
             
-            echo ' not empty';
-
             $products = "SELECT * FROM `products` WHERE `id`='$or_id'";
             $product_query = mysqli_query($con, $products);
             $product = mysqli_fetch_assoc($product_query);
@@ -205,16 +204,14 @@ if(isset($_POST['id']) && isset($_POST['field'])) {
             $product_img = $product['product_image'];
             $product_price = $product['product_price'];
 
-            echo $product_name.' '.$product_img.' '.$product_price;
-
-            $add_order = "INSERT INTO `users_order` VALUES ('', '$or_fname', '$or_add', '$or_size', '$or_id', '$product_name', '$product_price', Now())";
+            $add_order = "INSERT INTO `users_order` VALUES ('', '$or_fname', '$or_add', '$or_size', '$or_number', '$or_id', '$product_name', '$product_price', Now())";
 
             if($add_order_query = mysqli_query($con, $add_order)) {
 
-                echo 'Fuck yea';
+                echo '<div class="order-success"> Order Sent </div>';
 
             } else {
-                echo 'banana';
+               
             }
         }
     }

@@ -18,9 +18,10 @@ require_once 'Assets/Include/core.inc.php';
 </head>
 <style>
     body {
-        background-image: url(Assets/Media/Images/productsBG.jpeg);
+        /* background-image: url(Assets/Media/Images/productsBG.jpeg);
         background-position: center;
-        background-size: cover;
+        background-size: cover; */
+        background: #000;
     }
 </style>
 <body>
@@ -62,9 +63,14 @@ require_once 'Assets/Include/core.inc.php';
                                     <label for="">Size</label>
                                     <input type="text" id="size<?php echo $i; ?>">
                                 </div>
-                                <div class="form-action">
-                                    <button value="<?php echo $product_id; ?>" onclick="order(this, 'fullname<?php echo $i; ?>', 'address<?php echo $i; ?>', 'size<?php echo $i; ?>');">Order now</button>
+                                <div class="input-field">
+                                    <label for="">Contact Number:</label>
+                                    <input type="text" id="number<?php echo $i; ?>">
                                 </div>
+                                <div class="form-action">
+                                    <button id="sendOrder" value="<?php echo $product_id; ?>" onclick="getOrder(this, 'fullname<?php echo $i; ?>', 'address<?php echo $i; ?>', 'size<?php echo $i; ?>', 'number<?php echo $i;?>', 'productOrderPreview<?php echo $i; ?>');">Order now</button>
+                                </div>
+                                <div class="prevOrders" id="productOrderPreview<?php echo $i; ?>"></div>
                             </div>
                         </form>
                     </div>
@@ -75,7 +81,6 @@ require_once 'Assets/Include/core.inc.php';
         ?>
             <button class="product-preview" onclick="plusDivs(-1)">&#10094;</button>
             <button class="product-next" onclick="plusDivs(1)">&#10095;</button>
-            <div id="productOrderPreview"></div>
         </div>
     </div>    
     <div class="footer">

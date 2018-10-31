@@ -42,12 +42,17 @@ require_once 'connect.inc.php';
                 <div class="triton-name">
                     <a href="index.php">
                         <p>Triton Swim Club</p>
-                        <span>Naga City Camarines Sur</span>
                     </a>
                 </div>
                 <div class="triton-social">
-                    <span class="pri-icon"><i class="fas fa-lock"></i></span>
-                    <a href="triton.php">Triton Member Login</a>
+                    <div class="triton-login">
+                        <span class="pri-icon"><i class="fas fa-lock"></i></span>
+                        <a href="triton.php">Triton Member Login</a>
+                    </div>
+                    <div class="triton-facebook">
+                        <span><i class="fab fa-facebook-f"></i></span>
+                        <a href="https://www.facebook.com/tritonswimclub/">Like us on facebook</a>
+                    </div>
                 </div>
             </div>
         </div>

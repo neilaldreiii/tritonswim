@@ -46,22 +46,22 @@
                                 <div class="form-header">
                                     <h2>Sign Up</h2>
                                 </div>
-                                <form action="<?php echo $current_file; ?>" onSubmit="register(); return false;">
+                                <form action="success.php" method="POST">
                                     <div class="form-container">
                                         <div class="input-field">
-                                            <input type="text" name="verificationCode" id="verificationCode" value="<?php echo $db_code; ?>" disabled>
+                                            <input type="hidden" name="reg_code" id="verificationCode" value="<?php echo $db_code; ?>">
                                         </div>
                                         <div class="input-field">
-                                            <input type="text" name="username" placeholder="Username" id="username">
+                                            <input type="text" name="reg_username" placeholder="Username" id="username">
                                         </div>
                                         <div class="input-field">
-                                            <input type="password" name="password" placeholder="Password" id="password">
+                                            <input type="password" name="reg_password" placeholder="Password" id="password">
                                         </div>
                                         <div class="input-field">
-                                            <input type="text" name="fname" placeholder="First Name" id="firstName">
+                                            <input type="text" name="reg_fname" placeholder="First Name" id="firstName">
                                         </div>
                                         <div class="input-field">
-                                            <input type="text" name="lname" placeholder="Last Name" id="lastName">
+                                            <input type="text" name="reg_lname" placeholder="Last Name" id="lastName">
                                         </div>
                                         <div class="form-action">
                                             <a href="triton.php">Sign in Instead</a>
@@ -69,7 +69,6 @@
                                         </div>
                                     </div>
                                 </form>
-                                <div id="register"></div>
                             </div>
                         </div>
                         <?php

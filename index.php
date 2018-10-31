@@ -34,7 +34,7 @@ require_once 'Assets/Include/connect.inc.php';
 <body>
     <?php include 'Assets/Include/nav.inc.php'; ?>
     
-    <div class="triton-banner">
+    <div class="triton-banner" style="margin-top: 70px;">
         <div class="triton-slideshow">
             
             <?php

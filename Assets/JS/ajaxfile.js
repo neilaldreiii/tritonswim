@@ -142,7 +142,9 @@ function deleteField(id, field, message) {
      xmlhttp.send(parameters);
 }
 
-function order(id,fname, add, sz) {
+function getOrder(id,fname, add, sz, num, submitDisplay) {
+    
+    $('.prevOrders').show();
 
     if (window.XMLHttpRequest) {
 	
@@ -157,15 +159,15 @@ function order(id,fname, add, sz) {
  
          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
              
-             document.getElementById('productOrderPreview').innerHTML = xmlhttp.responseText;
-             
+             document.getElementById(submitDisplay).innerHTML = xmlhttp.responseText;
          }
      }
      
      parameters = 'pro_fname='+document.getElementById(fname).value
      +'&pro_add='+document.getElementById(add).value
      +'&pro_size='+document.getElementById(sz).value
-     +'&productID='+id.value;
+     +'&productID='+id.value
+     +'&pro_number='+document.getElementById(num).value;
  
      xmlhttp.open('POST', 'ajaxfile.php', true);
      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');

@@ -829,7 +829,144 @@ a.logout {
     border-radius: 3px;
     padding: 10px 15px;
 }
-
+@media only screen and (max-width: 640px) {
+    .container {
+        width: 100%!important;
+        margin: 0!important;
+    }
+    .lobby-avatar-container {
+        margin: auto;
+    }
+    .lobby-profile-name {
+        text-align: center;
+    }
+    .lobby-profile {
+        display: flex;
+        flex-flow: column!important;
+    }
+    .lobby-controls ul {
+        display: flex!important;
+        flex-flow: column;
+    }
+    .message-container {
+        width: 100%;
+        margin: 0;
+        height: 100vh;
+    }
+    .closer button {
+        height: auto!important;
+        width: auto!important;
+        border-radius: 0!important;
+        font-size: 10pt;
+    }
+    .add-athletes .form-container {
+        display: flex!important;
+        flex-flow: column!important;
+    }
+    .add-athletes,
+    .add-bm,
+    .add-events,
+    .add-gallery,
+    .add-products,
+    .add-slides,
+    .add-ads {
+        width: 100%!important;
+        box-shadow: none!important;
+    }
+    .main-pp img,
+    .secondary-pp img,
+    .event-info img,
+    .gallery-img img,
+    .product-info img,
+    .order-info img,
+    .slide-info img,
+    .ads-info img {
+        height: 50px!important;
+        width: 50px!important;
+    }
+    .athlete-row,
+    .board-row,
+    .events-row,
+    .gallery-row,
+    .product-row,
+    .order-row,
+    .slide-row,
+    .ads-row {
+        flex-flow: column!important;
+    }
+}
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+    .container {
+        width: 100%!important;
+        margin: 0!important;
+    }
+    .lobby-avatar-container {
+        margin: auto;
+    }
+    .lobby-profile-name {
+        text-align: center;
+    }
+    .lobby-profile {
+        display: flex;
+        flex-flow: column!important;
+    }
+    .lobby-controls ul {
+        display: flex!important;
+        flex-flow: column;
+    }
+    .message-container {
+        width: 100%;
+        margin: 0;
+        height: 100vh;
+    }
+    .closer button {
+        height: auto!important;
+        width: auto!important;
+        border-radius: 0!important;
+        font-size: 10pt;
+    }
+    .add-athletes .form-container {
+        display: flex!important;
+        flex-flow: column!important;
+    }
+    .add-athletes,
+    .add-bm,
+    .add-events,
+    .add-gallery,
+    .add-products,
+    .add-slides,
+    .add-ads {
+        width: 100%!important;
+        box-shadow: none!important;
+    }
+    .main-pp img,
+    .secondary-pp img,
+    .event-info img,
+    .gallery-img img,
+    .product-info img,
+    .order-info img,
+    .slide-info img,
+    .ads-info img {
+        height: 50px!important;
+        width: 50px!important;
+    }
+    .athlete-row,
+    .board-row,
+    .events-row,
+    .gallery-row,
+    .product-row,
+    .order-row,
+    .slide-row,
+    .ads-row {
+        flex-flow: column!important;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
 @media only screen and (min-width: 1200px) {
     .container {
         width: 100%;

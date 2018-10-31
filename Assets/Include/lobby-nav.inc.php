@@ -38,7 +38,9 @@ if (loggedin()) {
 
                                 $db_update = "UPDATE `admin` SET `avatar`='".mysqli_real_escape_string($con, $new_filename)."' WHERE `id`='$userID'";
                                 if($update_query = mysqli_query($con, $db_update)) {
+
                                     header('Location: lobby.php');
+                                    
                                 }
                             }
                         }
@@ -70,7 +72,7 @@ if (loggedin()) {
         </div>
         <div class="lobby-controls">
             <?php
-                if($username == "neilaldrei" || $username == "banana7") {
+                if($username == "neilaldrei" || $username == "asd" || $username == "darenz" ) {
                 ?>
                     <ul>
                         <li><a href="index.php">Homepage</a></li>

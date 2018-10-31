@@ -706,7 +706,7 @@ input[type=submit]:hover {
     }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and(min-width: 992px) and (max-width: 1199px) {
     header {
         padding: 7px!important;
     }

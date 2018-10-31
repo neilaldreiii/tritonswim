@@ -21,11 +21,7 @@
 
 <body> 
     <!-- Created new CSS File for members -->
-    <div class="container">
-        <header class="header">
-            <h1>Triton Swimclub Members</h1>
-            <h2><a href="index.php">Triton Swimclub Main Page</a></h2>
-        </header>
+    <div class="container" style="margin-top: 50px;">
         <div class="sub-container">
             <div class="register-container">
                 <div class="overlay">
@@ -75,6 +71,8 @@
             </div>
             <div class="login-container">
                 <?php include "Assets/Include/login.inc.php"; ?>
+                <h1>Triton Swimclub Members</h1>
+                <h2><a href="index.php">Triton Swimclub Main Page</a></h2>
             </div>
         </div>
     </div>
