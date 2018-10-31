@@ -33,12 +33,12 @@ require_once 'Assets/Include/core.inc.php';
         <div class="triton-gallery">
             <?php
             
-            $query = "SELECT * FROM `gallery` ORDER BY `image_ID` DESC";
+            $query = "SELECT * FROM `gallery` ORDER BY `id` DESC";
             if($query_run = mysqli_query($con, $query)) {
                 
                 while($row = mysqli_fetch_array($query_run)) {
                     
-                    $imgID = $row['image_ID'];
+                    $imgID = $row['id'];
                     $img = $row['image'];
                 ?>
                 <div class="image">

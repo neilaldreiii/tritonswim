@@ -12,11 +12,15 @@
     width: 100%;
     margin: 0 10px;
     border-radius: 3px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 .triton-banner .triton-slideshow .triton-slide {
     height: 100%;
     width: 100%;
     position: relative;
+    margin: auto;
 }
 .triton-banner .triton-slide-img img{
     height: 420px;

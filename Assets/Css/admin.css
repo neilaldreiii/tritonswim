@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     margin: 0;
     padding: 0;
     background: #f5f5f5;
@@ -18,14 +18,29 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: normal;
 }
+<<<<<<< HEAD
 .input-field, .form-action {
+=======
+
+.error {
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    color: tomato;
+}
+
+.input-field,
+.form-action {
+>>>>>>> lobby-b
     padding: 10px;
     margin: 15px 0;
 }
-.input-field input[type=text], .input-field input[type=password] {
+
+.input-field input[type="text"],
+.input-field input[type="password"] {
     outline: none;
     border: none;
     border-bottom: 2px solid #ff9696;
@@ -34,61 +49,279 @@ h6 {
     width: 100%;
     display: block;
 }
-.input-field input[type=text]:hover, .input-field input[type=password]:hover {
-    border-bottom: 2px solid #FF0000;
+
+.input-field input[type="text"]:hover,
+.input-field input[type="password"]:hover,
+.input-field textarea:hover {
+    border-bottom: 2px solid #ff0000;
 }
-.input-field input[type=text]:focus, .input-field input[type=password]:focus {
-    border-bottom: 2px solid #FF0000;
+
+.input-field input[type="text"]:focus,
+.input-field input[type="password"]:focus,
+.input-field textarea:focus {
+    border-bottom: 2px solid #ff0000;
 }
-.form-action input[type=submit] {
+
+.input-field textarea {
     outline: none;
     border: none;
-    background: #007bff;
+    border-radius: 3px;
+    padding: 5px;
+    resize: none;
+    font-size: 13pt;
+    width: 100%;
+    height: 125px;
+    font-family: "Open Sans", sans-serif;
+    border: 1px solid #ddd;
+    border-bottom: 2px solid #ff9696;
+}
+
+.input-field select {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #ff9696;
+    padding: 5px;
+    font-size: 13pt;
+}
+
+.form-action input[type="submit"] {
+    outline: none;
+    border: none;
+    background: rgb(0, 123, 255);
     color: #fff;
     font-size: 13pt;
     padding: 10px 20px;
     border-radius: 3px;
 }
-.form-action input[type=submit]:hover, .form-action input[type=submit]:focus {
-    background: #005fc4;
+
+.form-action input[type="submit"]:hover,
+.form-action input[type="submit"]:focus {
+    background: rgb(0, 95, 196);
     cursor: pointer;
 }
+
 .container {
     width: 80%;
     margin: auto;
 }
+
 .sub-container {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
 }
+
+.lobby-navigation {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 12px #ccc;
+}
+
+.lobby-navigation .lobby-navigation-wrap {
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+}
+
+.lobby-profile {
+    display: flex;
+    flex-flow: row;
+    margin: 10px 0;
+}
+
+.lobby-profile .lobby-avatar-container {
+    border: 1px solid;
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.lobby-main-avatar {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.lobby-main-avatar img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.lobby-main-avatar:hover .update-avatar {
+    opacity: 1;
+}
+.update-avatar {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    transition: opacity 0.5s;
+}
+.update-avatar form {
+    height: 100%;
+    width: 100%;
+}
+.avatar-update-btn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.update-avatar label {
+    color: #fafafa;
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: background 0.5s, color 0.5s, border 0.5s;
+}
+.update-avatar label:hover {
+    color: #FFF;
+    font-weight: 600;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #fff;
+}
+.update-avatar input[type=file] {
+    display: none;
+}
+.lobby-profile .lobby-profile-name {
+    margin: auto 10px;
+}
+
+.lobby-profile .lobby-profile-name p {
+    margin: 10px;
+    padding: 0;
+}
+
+.lobby-messaging, .lobby-logout {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.lobby-logout {
+    margin: auto;
+    margin-right: 5px;
+}
+.lobby-messaging button {
+    outline: none;
+    border: none;
+    background: #0084FF;;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 5px;
+    color: #fff !important;
+    text-align: center;
+    font-size: 13pt;
+    transition: all 0.5s;
+}
+
+.lobby-messaging button:hover {
+    background: rgb(3, 123, 235);
+    cursor: pointer;
+}
+
+a.logout {
+    text-decoration: none;
+    background: #343434;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 5px;
+    color: #fff !important;
+    text-align: center;
+    font-size: 12pt;
+}
+
+.lobby-controls {
+    display: flex;
+    flex-flow: column;
+}
+
+.lobby-controls ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 20px;
+    margin: 10px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.lobby-controls a.non-admin {
+    display: block;
+    padding: 10px;
+    text-align: left;
+    text-decoration: none;
+    color: #444;
+    margin: 5px 0;
+}
+.lobby-controls a.non-admin:hover {
+    background: #f3f3f3;
+}
+.lobby-controls ul li{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.lobby-controls ul li a {
+    border-radius: 3px;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: #444;
+    font-size: 17pt;
+    border: 1px solid #ddd;
+}
+
+.lobby-controls ul li a:hover {
+    background: #f3f3f3;
+}
+
 .container .header {
     padding: 40px 0;
     margin: 50px 0;
     margin-top: 0;
 }
+
 .form-header {
     text-align: center;
     background: #ff0000a6;
     padding: 10px;
     color: #000000;
 }
+
 .login-container {
     width: 30%;
 }
+
 .login {
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 0 8px #ccc;
-    background: #FFF;
+    background: #fff;
     width: 350px;
     overflow: hidden;
 }
-.login .form-action input[type=submit] {
+
+.login .form-action input[type="submit"] {
     display: block;
     margin: auto;
     margin-right: 0;
 }
+
 .register-container {
     flex-grow: 1;
     height: 590px;
@@ -101,25 +334,33 @@ h6 {
     position: relative;
     overflow: hidden;
 }
+
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     padding: 10px;
+<<<<<<< HEAD
     background: rgba(0,0,0,0.5);
+=======
+    background: rgba(0, 0, 0, 0.7);
+>>>>>>> lobby-b
 }
+
 .notice {
-    color: #FFF;
+    color: #fff;
     font-size: 10pt;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
 }
+
 .notice .notice-field {
     margin: auto;
 }
-.notice .notice-field input[type=text]{
+
+.notice .notice-field input[type="text"] {
     outline: none;
     border: none;
     border-radius: 3px;
@@ -128,13 +369,621 @@ h6 {
     margin: auto;
     font-size: 10pt;
 }
-.notice .notice-field input[type=submit] {
+
+.notice .notice-field input[type="submit"] {
     outline: none;
     border: none;
     border-radius: 3px;
     background: #007bff;
-    color: #FFF;
+    color: #fff;
     padding: 5px;
     margin: 0 10px;
     font-weight: 600;
+<<<<<<< HEAD
+=======
+}
+
+.register {
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #ccc;
+    background: #fff;
+    width: 450px;
+    overflow: hidden;
+}
+
+.register .form-action {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.register .form-action a {
+    color: #6c757d;
+    display: block;
+    margin: auto;
+    margin-left: 0;
+    border-radius: 3px;
+}
+
+.lobby {
+    display: flex;
+    flex-flow: row;
+}
+
+.message-board {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    display: none;
+}
+.message-container {
+    display: flex;
+    flex-flow: column;
+    height: auto;
+    width: 825px;
+    justify-content: center;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 10px auto;
+}
+.closer {
+    margin: auto;
+    padding: 20px 10px;
+}
+.closer button {
+    border: none;
+    outline: none;
+    color: #FFF;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    font-size: 16pt;
+    background: #d9534f;
+    transition: all 0.5s;
+    
+}
+.closer button:hover {
+    cursor: pointer;
+    background:#dc3545;
+}
+.message-preview {
+    display: block;
+    height: 725px;
+    width: 100%;
+    margin: auto;
+    background: #fff;
+    border-radius: 3px;
+    border-bottom: 1px solid #6c757d;
+    overflow-Y: auto;
+    overflow-x: hidden;
+}
+
+.sender-row {
+    display: flex;
+    flex-flow: row;
+    padding: 10px;
+}
+
+.current-user {
+    flex-flow: row-reverse;
+}
+
+.current-user .sender-info .sender-avatar img, .other-user .sender-info .sender-avatar img{
+    border-radius: 50%;
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+.sender-name {
+    font-size: 12pt;
+    color: #6c757d;
+}
+.sender-name p {
+    text-align: right;
+    margin: 0 10px;
+    padding: 0;
+}
+.current-user .message p{
+    display: inline-block;
+    background: #17a2b8;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 3px 10px;
+    color: #FFF;
+}
+.message {
+    margin: auto;
+    margin-bottom: 0;
+}
+.message-info {
+    display: flex;
+    flex-flow: column;
+}
+.other-user .message p {
+    background: #e9ebee;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 3px 10px;
+    color: #444;
+}
+.current-user .message span {
+    display: block;
+    font-size: 10pt;
+    color: #888;
+    margin: auto;
+    text-align: right;  
+    padding: 0;
+}
+.other-user .message span {
+    display: block;
+    font-size: 10pt;
+    color: #888;
+    margin: auto;
+    text-align: left;  
+    padding: 0;
+}
+.message-actions {
+    background: #e9ebee;
+    border-radius: 3px;
+    margin: 5px 0;
+}
+.message-form-container {
+    display: flex;
+    flex-flow: row;
+    margin: 15px 5px;
+    margin-bottom: 5px;
+}
+
+.message-form-container .message-field {
+    flex-grow: 1;
+}
+
+.message-form-container .message-field input[type="text"] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ff9696;
+    padding: 5px;
+    border-radius: 3px;
+    width: 100%;
+    font-size: 12pt;
+}
+
+.message-form-container .message-form-action input[type="submit"] {
+    outline: none;
+    border: none;
+    border: 1px solid #007bff;
+    background: #007bff;
+    color: #fff;
+    font-size: 12pt;
+    display: block;
+    margin: auto;
+    margin-left: 15px;
+    padding: 5px;
+    font-weight: normal;
+    border-radius: 3px;
+}
+.admin-controls {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+}
+.athlete-row:nth-child(odd),
+.board-row:nth-child(odd),
+.events-row:nth-child(odd),
+.gallery-row:nth-child(odd),
+.product-row:nth-child(odd),
+.order-row:nth-child(odd),
+.slide-row:nth-child(odd),
+.ads-row:nth-child(odd) {
+    background: #fff;
+}
+
+.athlete-row:nth-child(even),
+.board-row:nth-child(even),
+.events-row:nth-child(even),
+.gallery-row:nth-child(even),
+.product-row:nth-child(even),
+.order-row:nth-child(even),
+.slide-row:nth-child(even),
+.ads-row:nth-child(even) {
+    background: #fafafa;
+}
+
+.athlete-row,
+.board-row,
+.events-row,
+.gallery-row,
+.product-row,
+.order-row,
+.slide-row,
+.ads-row {
+    display: flex;
+    flex-flow: row;
+    margin: 20px 0;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.athlete-info,
+.board-info,
+.events-info,
+.gallery-info,
+.product-info,
+.order-info,
+.slide-info,
+.ads-info {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.athlete-info .profile-image,
+.board-info .board-pp {
+    display: flex;
+    flex-flow: row;
+    margin: auto;
+    text-align: center;
+    font-size: 10pt;
+}
+
+.athlete-info .profile-image p {
+    margin: 5px 0;
+    padding: 0;
+}
+
+.athlete-info .profile-image img,
+.board-info .board-pp img {
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: auto 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #ccc;
+}
+
+.athlete-intro-cat,
+.board-intro,
+.event-intro,
+.gallery-intro,
+.product-intro,
+.order-intro,
+.slide-intro {
+    margin: 0 10px;
+    padding: 10px;
+    width: 50%;
+}
+
+.athlete-wrap p,
+.board-wrap p,
+.event-intro p,
+.slide-intro p,
+.order-intro p {
+    margin: 0;
+    padding: 5px;
+}
+
+.athlete-wrap p:first-child,
+.board-wrap p:first-child {
+    font-weight: 600;
+    font-size: 16pt;
+}
+
+.athlete-wrap p:last-child,
+.board-wrap p:last-child {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.athlete-row-controls,
+.board-row-controls,
+.events-row-controls,
+.gallery-row-controls,
+.product-row-controls,
+.order-row-controls,
+.slide-row-controls,
+.ads-row-controls {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.remove {
+    align-self: center;
+    display: block;
+    margin: auto;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 13pt;
+    font-weight: 600;
+    padding: 10px;
+    background: #dc3545;
+    border-radius: 50px;
+    box-shadow: 3px 3px 12px #888;
+}
+
+.remove:hover {
+    cursor: pointer;
+    background: #c42f3e;
+}
+
+.add-athletes {
+    width: 50%;
+    margin: auto;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 12px #ccc;
+}
+
+.add-athletes .form-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#introduce {
+    grid-column: 1/3;
+}
+
+#prime {
+    grid-column: 1/2;
+}
+
+.add-bm,
+.add-events,
+.add-gallery,
+.add-products,
+.add-slides,
+.add-ads {
+    width: 50%;
+    margin: auto;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 12px #ccc;
+    overflow: hidden;
+}
+
+.event-info img,
+.gallery-img img,
+.product-info img,
+.order-info img,
+.slide-info img,
+.ads-info img {
+    display: block;
+    height: 170px;
+    width: 250px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    margin: auto 15px;
+}
+
+.event-intro p.title,
+.product-intro p.title,
+.order-intro p.title,
+.slide-intro p.title {
+    font-weight: 600;
+    font-size: 18pt;
+    color: #007bff;
+}
+
+.event-intro p.description,
+.product-intro p.price,
+.slide-intro p.caption,
+.order-intro p.price {
+    font-size: 14pt;
+}
+
+.event-intro p.timestamp, .order-intro p.timestamp {
+    font-size: 10pt;
+}
+#keyDisplay {
+    width: 300px;
+    text-align: center;
+}
+#codeignite {
+    outline: none;
+    border: none;
+    background: #17a2b8;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    display: block;
+    font-size: 13pt;
+    margin: 15px auto;
+}
+#codeignite:hover {
+    cursor: pointer;
+    background: #158da0;
+}
+.application-lists {
+    display: flex;
+    flex-flow: column;
+    height: 650px;
+    overflow-x: auto;
+    padding: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+.app-row {
+    padding: 15px;
+    border-radius: 3px;
+    margin: 10px 0;
+    margin-bottom: 25px;
+    box-shadow: 0 0 8px #ccc;
+}
+.app-row:nth-child(even) {
+    background: #FFF;
+    border-radius: 3px;
+}
+.app-row:nth-child(odd) {
+    border-radius: 3px;
+    background: #fcfcfc;
+}
+.back-btn {
+    text-decoration: none;
+    display: inline-block;
+    background: #6c757d;
+    margin: 20px 0;
+    color: #FFF;
+    border-radius: 3px;
+    padding: 10px 15px;
+}
+@media only screen and (max-width: 640px) {
+    .container {
+        width: 100%!important;
+        margin: 0!important;
+    }
+    .lobby-avatar-container {
+        margin: auto;
+    }
+    .lobby-profile-name {
+        text-align: center;
+    }
+    .lobby-profile {
+        display: flex;
+        flex-flow: column!important;
+    }
+    .lobby-controls ul {
+        display: flex!important;
+        flex-flow: column;
+    }
+    .message-container {
+        width: 100%;
+        margin: 0;
+        height: 100vh;
+    }
+    .closer button {
+        height: auto!important;
+        width: auto!important;
+        border-radius: 0!important;
+        font-size: 10pt;
+    }
+    .add-athletes .form-container {
+        display: flex!important;
+        flex-flow: column!important;
+    }
+    .add-athletes,
+    .add-bm,
+    .add-events,
+    .add-gallery,
+    .add-products,
+    .add-slides,
+    .add-ads {
+        width: 100%!important;
+        box-shadow: none!important;
+    }
+    .main-pp img,
+    .secondary-pp img,
+    .event-info img,
+    .gallery-img img,
+    .product-info img,
+    .order-info img,
+    .slide-info img,
+    .ads-info img {
+        height: 50px!important;
+        width: 50px!important;
+    }
+    .athlete-row,
+    .board-row,
+    .events-row,
+    .gallery-row,
+    .product-row,
+    .order-row,
+    .slide-row,
+    .ads-row {
+        flex-flow: column!important;
+    }
+}
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+    .container {
+        width: 100%!important;
+        margin: 0!important;
+    }
+    .lobby-avatar-container {
+        margin: auto;
+    }
+    .lobby-profile-name {
+        text-align: center;
+    }
+    .lobby-profile {
+        display: flex;
+        flex-flow: column!important;
+    }
+    .lobby-controls ul {
+        display: flex!important;
+        flex-flow: column;
+    }
+    .message-container {
+        width: 100%;
+        margin: 0;
+        height: 100vh;
+    }
+    .closer button {
+        height: auto!important;
+        width: auto!important;
+        border-radius: 0!important;
+        font-size: 10pt;
+    }
+    .add-athletes .form-container {
+        display: flex!important;
+        flex-flow: column!important;
+    }
+    .add-athletes,
+    .add-bm,
+    .add-events,
+    .add-gallery,
+    .add-products,
+    .add-slides,
+    .add-ads {
+        width: 100%!important;
+        box-shadow: none!important;
+    }
+    .main-pp img,
+    .secondary-pp img,
+    .event-info img,
+    .gallery-img img,
+    .product-info img,
+    .order-info img,
+    .slide-info img,
+    .ads-info img {
+        height: 50px!important;
+        width: 50px!important;
+    }
+    .athlete-row,
+    .board-row,
+    .events-row,
+    .gallery-row,
+    .product-row,
+    .order-row,
+    .slide-row,
+    .ads-row {
+        flex-flow: column!important;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    .message-container {
+        height: 620px!important;
+    }
+>>>>>>> lobby-b
 }

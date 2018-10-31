@@ -21,6 +21,7 @@
 .triton-logo-container {
     height: 100px;
     width: 100px;
+    margin: auto;
     border-radius: 50%;
     overflow: hidden;
     background: rgba(255,255,255,1);
@@ -113,7 +114,7 @@
 .triton-brand .triton-name a p {
     border-bottom: 2px solid transparent;
     transition: border 0.5s;
-    font-size: 20pt;
+    font-size: 18pt;
 }
 .triton-brand .triton-name a span {
     display: block;
@@ -129,13 +130,51 @@
 .triton-brand .triton-social {
    margin: 5px;
 }
+.triton-login {
+    background: #14171a;
+    color: #FFF;
+    display: inline-flex;
+    flex-flow: row;
+    margin: 0 10px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 8px #343434;
+    padding: 5px;
+}
+.triton-facebook {
+    background: #365899;
+    color: #FFF;
+    display: inline-flex;
+    flex-flow: row;
+    margin: 0 10px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 8px #343434;
+    padding: 5px;
+}
+.triton-facebook a, .triton-login a {
+    color: #FFF;
+    display: block;
+    margin: auto 10px;
+    text-decoration: none;
+    font-size: 11pt!important;
+}
+.triton-facebook span, .triton-login span {
+    color: #FFF;
+    display: block;
+    margin: auto 10px;
+    text-decoration: none;
+    font-size: 11pt!important;
+}
+
+/*
 .triton-brand .triton-social a {
-    color: #3B5998;
-    font-size: 18pt;
+    color: #fff;
+    font-size: 13pt;
     display: block;
     text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: border 0.5s;
+    font-weight: 600;
+    text-shadow: 3px 3px 12px #000;
 }
 .triton-brand .triton-social span {
     font-weight: 600;
@@ -146,7 +185,7 @@
 }
 .triton-brand .triton-social a:hover {
     border-bottom: 2px solid #FFF;
-}
+} */
 .article ul {
     list-style-type: none;
     margin: 0;

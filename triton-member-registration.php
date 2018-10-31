@@ -74,11 +74,66 @@
                         header("Location: events.php");
                         echo '<p class="error">Failed adding member</p>';
 
+<<<<<<< HEAD
                     }
                 } else {
 
                     header("Location: gallery.php");
                     echo '<p class="error">Verification code failed</p>';
+=======
+            if(!empty($code)) {
+
+                $verify = "SELECT * FROM `verify` WHERE `veri_code`='".mysqli_real_escape_string($con, $code)."'";
+                if($verify_query = mysqli_query($con, $verify)) {
+
+                    $num_rows = mysqli_num_rows($verify_query);
+                    if($num_rows == 1) {
+                        
+                        $row = mysqli_fetch_array($verify_query);
+                        $code_id = $row['id'];
+                        $db_code = $row['veri_code'];
+                        $db_stats = $row['status'];
+
+                        if($db_stats == 'new') {
+
+                        ?>
+
+                        <div class="container">
+                            <header class="header">
+                                <h1>Triton Swimclub Members - Sign Up</h1>
+                            </header>
+                            <div class="register">
+                                <div class="form-header">
+                                    <h2>Sign Up</h2>
+                                </div>
+                                <form action="success.php" method="POST">
+                                    <div class="form-container">
+                                        <div class="input-field">
+                                            <input type="hidden" name="reg_code" id="verificationCode" value="<?php echo $db_code; ?>">
+                                        </div>
+                                        <div class="input-field">
+                                            <input type="text" name="reg_username" placeholder="Username" id="username">
+                                        </div>
+                                        <div class="input-field">
+                                            <input type="password" name="reg_password" placeholder="Password" id="password">
+                                        </div>
+                                        <div class="input-field">
+                                            <input type="text" name="reg_fname" placeholder="First Name" id="firstName">
+                                        </div>
+                                        <div class="input-field">
+                                            <input type="text" name="reg_lname" placeholder="Last Name" id="lastName">
+                                        </div>
+                                        <div class="form-action">
+                                            <a href="triton.php">Sign in Instead</a>
+                                            <input type="submit" value="Sign up">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <?php
+                        } elseif($db_stats == 'in-use') {
+>>>>>>> lobby-b
 
                 }
             } else {
@@ -86,10 +141,24 @@
                 header("Location: athletes.php");
                 echo '<p class="error">All fields are required.</p>';
 
+<<<<<<< HEAD
+=======
+                    } elseif($num_rows == 0) {
+
+                        echo '<p class="error">The code you entered does not exist. </p>';
+                        
+                    }
+                }
+>>>>>>> lobby-b
             }
         }
+<<<<<<< HEAD
         ?>
     </div>
 </div>
+=======
+    ?>
+    <script src="Assets/JS/ajaxfile.js"></script>
+>>>>>>> lobby-b
 </body>
 </html>

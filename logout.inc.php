@@ -4,5 +4,5 @@ require 'Assets/Include/connect.inc.php';
 
 session_destroy();
 
-header("Location: triton-login.php");
+header("Location: triton.php");
 ?>

@@ -17,39 +17,42 @@ require_once 'connect.inc.php';
                 <i class="fas fa-bars"></i>
             </span>
             <div class="nav-links" id="navigation-links">
-                <a href="index.php">Home</a>
-
+                <a href="index.php"> <span class="pri-icon"><i class="fas fa-home"></i></span> Home</a>
                 <div class="dropdown">
-                    <span class="dropdown-btn" id="dropbtnEvents">Events <span class="icon"><i class="fas fa-caret-down"></i></span></span>
+                    <span class="dropdown-btn" id="dropbtnEvents"> <span class="pri-icon"><i class="fas fa-calendar-alt"></i></span>Events <span class="icon"><i class="fas fa-caret-down"></i></span></span>
                     <div class="dropdown-content" id="dropdownEvents"> 
                         <a href="events.php">Events</a>
                         <a href="gallery.php">Gallery</a>
                     </div>
                 </div>
-
                 <div class="dropdown">
-                    <span class="dropdown-btn" id="dropbtnMember">Members <span class="icon"><i class="fas fa-caret-down"></i></span></span>
+                    <span class="dropdown-btn" id="dropbtnMember"> <span class="pri-icon"><i class="fas fa-users"></i></span>Members <span class="icon"><i class="fas fa-caret-down"></i></span></span>
                     <div class="dropdown-content" id="dropdownMember">
                         <a href="board-members.php">Board Members</a>
                         <a href="coaches.php">Coaches</a>
                         <a href="athletes.php">Athletes</a>
                     </div>
                 </div>
-
-                <a href="guidelines.php">Guidelines</a>
-                <a href="register.php">Registration</a>
-                <a href="policy.php">Policies</a>
-                <a href="products.php">Products</a>
+                <a href="guidelines.php"> <span class="pri-icon"><i class="fas fa-book-open"></i></span>Guidelines</a>
+                <a href="register.php"> <span class="pri-icon"><i class="fas fa-plus"></i></span> Registration</a>
+                <a href="policy.php"> <span class="pri-icon"><i class="fas fa-shopping-cart"></i></span> Policies</a>
+                <a href="products.php"> <span class="pri-icon"><i class="fas fa-life-ring"></i></span> Products</a>
             </div>
             <div class="triton-brand">
                 <div class="triton-name">
                     <a href="index.php">
                         <p>Triton Swim Club</p>
-                        <span>Naga City Camarines Sur</span>
                     </a>
                 </div>
                 <div class="triton-social">
-                    <a target="_blank" href="https://www.facebook.com/tritonswimclub/"><i class="fab fa-facebook-f"></i> <span>Like us on Facebook</span></a>
+                    <div class="triton-login">
+                        <span class="pri-icon"><i class="fas fa-lock"></i></span>
+                        <a href="triton.php">Triton Member Login</a>
+                    </div>
+                    <div class="triton-facebook">
+                        <span><i class="fab fa-facebook-f"></i></span>
+                        <a href="https://www.facebook.com/tritonswimclub/">Like us on facebook</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -11,8 +11,14 @@
         </div>
         <div id="devs-display">
             <div class="devs-display-content">
-                <p>Full Stack Developer: <span>Neil Aldrei Peralta</span></p>
-                <p>Visual Designer: <span>Elmer R</span></p>
+                <p>Full Stack Developer: 
+                    <span>Neil Aldrei Peralta |</span>
+                    <span>neilaldrei@icloud.com</span>
+                </p>
+                <p>Visual Designer: 
+                    <span>Elmer |</span>
+                    <span>balads07_21@yahoo.com</span>
+                </p>
             </div>
         </div>
     </div>

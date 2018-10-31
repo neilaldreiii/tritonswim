@@ -34,11 +34,11 @@ require_once 'Assets/Include/connect.inc.php';
 <body>
     <?php include 'Assets/Include/nav.inc.php'; ?>
     
-    <div class="triton-banner">
+    <div class="triton-banner" style="margin-top: 70px;">
         <div class="triton-slideshow">
             
             <?php
-            $query = "SELECT * FROM `slides` ORDER BY `slide_id`";
+            $query = "SELECT * FROM `slides` ORDER BY `id`";
             if($query_run = mysqli_query($con, $query)) {
 
                 while($row = mysqli_fetch_array($query_run)) {

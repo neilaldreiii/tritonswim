@@ -1,41 +1,12 @@
 <?php
 require 'Assets/Include/connect.inc.php';
 
-if(isset($_POST['remove'])) {
-    $id = $_POST['remove'];
-    
-    if(!empty($id)) {
-        
-        $delete = "DELETE FROM `athletes` WHERE `athletes`.`athlete_ID` ='".mysqli_real_escape_string($con, $id)."'";
-        if($delete_query = mysqli_query($con, $delete)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
-
-if(isset($_POST['deleteimg'])) {
-    $imgid = $_POST['deleteimg'];
-    
-    if(!empty($imgid)) {
-        
-        $deleteimg = "DELETE FROM `gallery` WHERE `gallery`.`image_ID` ='".mysqli_real_escape_string($con, $imgid)."'";
-        
-        if($deleteimg_query = mysqli_query($con, $deleteimg)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
-
 if(isset($_POST['maximize'])) {
     
     $galleryImg = $_POST['maximize'];
     if(!empty($galleryImg)) {
         
-        $maximize = "SELECT * FROM `gallery` WHERE `image_ID`='$galleryImg'";
+        $maximize = "SELECT * FROM `gallery` WHERE `id`='$galleryImg'";
         if($max_run = mysqli_query($con, $maximize)) {
             
             $img_row = mysqli_fetch_array($max_run);
@@ -65,7 +36,7 @@ if(isset($_POST['athlete'])) {
     
     if(!empty($athlete_id)) {
         
-        $retrieve_athlete = "SELECT * FROM `athletes` WHERE `athlete_ID` ='$athlete_id'";
+        $retrieve_athlete = "SELECT * FROM `athletes` WHERE `id` ='$athlete_id'";
         if($ra_query = mysqli_query($con, $retrieve_athlete)) {
             
             while($ra_row = mysqli_fetch_array($ra_query)){
@@ -110,136 +81,164 @@ if(isset($_POST['athlete'])) {
         }
     }
 }
+?>
+<?php 
 
-if(isset($_POST['removeproduct'])) {
-    
-    $product_id = $_POST['removeproduct'];
-    
-    if(!empty($product_id)) {
-        
-        $dltprod = "DELETE FROM `products` WHERE `products`.`product_id` = $product_id";
-        if($dltprod_qry = mysqli_query($con, $dltprod)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
+    // if(isset($_POST['reg_username']) 
+    // && isset($_POST['reg_password'])
+    // && isset($_POST['reg_code'])
+    // && isset($_POST['reg_fname'])
+    // && isset($_POST['reg_lname'])) {
+
+    //     $username = $_POST['reg_username'];
+    //     $password =$_POST['reg_password'];
+    //     $code = $_POST['reg_code'];
+    //     $fname = $_POST['reg_fname'];
+    //     $lname = $_POST['reg_lname'];
+
+    //     $password_hash = password_hash($password, PASSWORD_BCRYPT, array('cost' => 10));
+
+    //     if(!empty($username)
+    //     && !empty($password)
+    //     && !empty($code)
+    //     && !empty($fname)
+    //     && !empty($lname)) {
+
+    //         $use_code = "SELECT * FROM `verify` WHERE `veri_code`='$code'";
+    //         if($use_code_query = mysqli_query($con, $use_code)) {
+
+    //             $code_row = mysqli_fetch_array($use_code_query);
+    //             $code_id = $code_row['id'];
+    //             $update_code = "UPDATE `verify` SET `status`='in-use' WHERE `verify`.`id` = '$code_id'";
+
+    //             if($update_code_query = mysqli_query($con, $update_code)) {
+                    
+    //                 $availability = "SELECT * FROM `admin` WHERE `username`='$username'";
+    //                 if($availability_query = mysqli_query($con, $availability)) {
+
+    //                     $num_rows = mysqli_num_rows($availability_query);
+
+    //                     if($num_rows == 1) {
+
+    //                         echo '<p class="error">Username is already in use.</p>';
+
+    //                     } elseif($num_rows == 0) {
+                            
+    //                         $add = "INSERT INTO `admin` VALUES('','".mysqli_real_escape_string($con, $username)."', '".mysqli_real_escape_string($con, $password_hash)."', '".mysqli_real_escape_string($con, $fname)."', '".mysqli_real_escape_string($con, $lname)."',
+    //                         'avatar_null')";
+
+    //                         if($add_query = mysqli_query($con, $add)) {
+    //                             echo '<p>Registration Successfull. <a href="triton.php">Sign In</a></p>';
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+?>
+
+<?php
+
+if(isset($_POST['generate'])) {
+
+    require 'Assets/Include/core.inc.php';
+    $key = $_POST['generate'];
+
+    if(!empty($key)) {
+
+        $generated = date("mdy").'-'.imagefilename(6);
+        $add = "INSERT INTO `verify` VALUES('', '".mysqli_real_escape_string($con, $generated)."', 'new')";
+        if($add_query = mysqli_query($con, $add)) {
+            echo '<p class="keyCodes"><b>Verification Code:</b> '.$generated.'</p>';
         }
     }
 }
 
-if(isset($_POST['removebm'])) {
-    
-    $bm_id = $_POST['removebm'];
-    
-    if(!empty($bm_id)) {
-        
-        $dltbm = "DELETE FROM `board` WHERE `board`.`member_id` = $bm_id";
-        if($dltbm_qry = mysqli_query($con, $dltbm)) {
+if(isset($_POST['id']) && isset($_POST['field'])) {
+    $id = $_POST['id'];
+    $field = $_POST['field'];
+
+    if(!empty($id)) {
+
+        $query = "DELETE FROM `$field` WHERE `$field`.`id` = $id";
+        if($query = mysqli_query($con, $query)) {
             
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
+            echo '<meta http-equiv="refresh" content="1">';
         }
+
+    } else {
+        echo 'Empty Bananas';
     }
 }
 
 
-if(isset($_POST['removead'])) {
-    
-    $ad_id = $_POST['removead'];
-    
-    if(!empty($ad_id)) {
-        
-        $dltad = "DELETE FROM `ads` WHERE `ads`.`ads_id` = $ad_id";
-        if($dltad_qry = mysqli_query($con, $dltad)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
+?>
 
-if(isset($_POST['removeevent'])) {
-    
-    $event_id = $_POST['removeevent'];
-    
-    if(!empty($event_id)) {
-        
-        $dltevent = "DELETE FROM `events` WHERE `events`.`event_ID` = $event_id";
-        if($dltevent_qry = mysqli_query($con, $dltevent)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
+<?php 
 
-if(isset($_POST['removereg'])) {
-    
-    $reg_id = $_POST['removereg'];
-    
-    if(!empty($reg_id)) {
-        
-        $dltreg = "DELETE FROM `registration` WHERE `registration`.`register_id` = $reg_id";
-        if($dltreg_qry = mysqli_query($con, $dltreg)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-    }
-}
+    if(isset($_POST['pro_fname']) 
+    && isset($_POST['pro_add']) 
+    && isset($_POST['pro_size']) 
+    && isset($_POST['productID'])
+    && isset($_POST['pro_number'])) {
 
-if(isset($_POST['removeslide'])) {
-    
-    $slide_id = $_POST['removeslide'];
-    
-    if(!empty($slide_id)) {
-        
-        $dltslide = "DELETE FROM `slides` WHERE `slides`.`slide_id` ='$slide_id'";
-        if($dltslidequery = mysqli_query($con, $dltslide)) {
-            
-            echo '<meta http-equiv="refresh" content="0.1">';
-            
-        }
-        
-    }
-    
-}
+        $or_fname = $_POST['pro_fname'];
+        $or_add = $_POST['pro_add'];
+        $or_size = $_POST['pro_size'];
+        $or_id = $_POST['productID'];
+        $or_number = $_POST['pro_number'];
 
-if(isset($_POST['showProduct'])) {
-    
-    $product_id = $_POST['showProduct'];
-    
-    if(!empty($product_id)) {
-        $product_query = "SELECT * FROM `products` WHERE `product_id`='$product_id'";
-        if($pq_run = mysqli_query($con, $product_query)) {
+        if(!empty($or_fname)
+        && !empty($or_add)
+        && !empty($or_size)
+        && !empty($or_id)
+        && !empty($or_number)) {
             
-            while($pq_row = mysqli_fetch_array($pq_run)) {
-                
-                $product_img = $pq_row['product_image'];
-                $product_title = $pq_row['product_title'];
-                $product_price = $pq_row['product_price'];
-                ?>
-                
-                <div class="display-product-container">
-                    <div class="product-image"><img src="Assets/Media/Uploads/<?php echo $product_img; ?>" alt=""></div>
-                    <div class="product-caption">
-                        <h1><?php echo $product_title; ?></h1>
-                        <p><?php echo "&#8369; ".$product_price; ?></p>
-                        <div class="product-contacts">
-                            <h1>For orders and inquiry text/email/call us</h1>
-                            <h3><i>Complete name + Product name + size &amp; send to:</i></h3>
-                            <p>09055201970 - Jopet Castañeda</p>
-                            <p>or</p>
-                            <p>tritonclub2017@gmail.com</p>
-                            <p>or</p>
-                            <p>Facebook: <a href="https://www.facebook.com/tritonswimclub/">Triton Swim Club</a></p>
-                        </div>
-                    </div>
-                </div>
-                
-                <?php
+            $products = "SELECT * FROM `products` WHERE `id`='$or_id'";
+            $product_query = mysqli_query($con, $products);
+            $product = mysqli_fetch_assoc($product_query);
+            
+            $product_name = mysqli_real_escape_string($con, $product['product_title']);
+            $product_img = $product['product_image'];
+            $product_price = $product['product_price'];
+
+            $add_order = "INSERT INTO `users_order` VALUES ('', '$or_fname', '$or_add', '$or_size', '$or_number', '$or_id', '$product_name', '$product_price', Now())";
+
+            if($add_order_query = mysqli_query($con, $add_order)) {
+
+                echo '<div class="order-success"> Order Sent </div>';
+
+            } else {
+               
             }
         }
     }
-    
+?>
+
+<?php 
+
+if(isset($_POST['message'])) {
+
+    $message = mysqli_real_escape_string($con, $_POST['message']);
+
+    if(!empty($message)) {
+
+        require_once 'Assets/Include/core.inc.php';
+        $sender = getuserfield('id');
+        $add_message = "INSERT INTO `messages` VALUES('', '$message', '$sender', Now())";
+
+        if($add_message_query = mysqli_query($con, $add_message)) {
+        } else {
+
+            echo '<p>Connection Failed</p>';
+
+        }
+    } else {
+
+        echo '<p>Cannot send an empty message</p>';
+
+    }
 }
 ?>

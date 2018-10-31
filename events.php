@@ -37,12 +37,12 @@ include_once 'Assets/Include/core.inc.php';
             <div class="triton-events-wrapper">
         <?php
             
-            $query = "SELECT * FROM `events` ORDER BY `event_ID` DESC";
+            $query = "SELECT * FROM `events` ORDER BY `id` DESC";
             if($query_run = mysqli_query($con, $query)) {
                 
                 while($row = mysqli_fetch_array($query_run)) {
                     
-                    $eventID = $row['event_ID'];
+                    $eventID = $row['id'];
                     $title = ucfirst($row['event_title']);
                     $info = ucfirst($row['event_description']);
                     $event_img = $row['event_image'];

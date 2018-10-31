@@ -39,12 +39,12 @@ require_once 'Assets/Include/core.inc.php';
             </header>
             <div class="content">
                 <?php
-                    $query = "SELECT * FROM `board` ORDER BY `member_id` DESC";
+                    $query = "SELECT * FROM `board` ORDER BY `id` DESC";
                     if($query_run = mysqli_query($con, $query)) {
                         
                         while($row = mysqli_fetch_array($query_run)) {
                             
-                            $member_id = $row['member_id'];
+                            $member_id = $row['id'];
                             $bm = $row['member_name'];
                             $pos = $row['position'];
                             $mem_img = $row['member_img'];
